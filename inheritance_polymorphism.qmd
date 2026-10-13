@@ -1,0 +1,37 @@
+# Inheritance and Polymorphism
+
+1. Create a class `Animal` with an attribute `name` and a method `speak()` that returns a generic message. Then create a class `Dog` that inherits from `Animal` and overrides the `speak()` method so that it returns a dog's sound.
+
+2. Define a class `Shape` with a method `area()` that returns 0. Create classes `Rectangle` and `Circle` that inherit from `Shape` and implement their own versions of `area()` with the appropriate calculations.
+
+3. Write a class `Vehicle` with attributes `brand` and `max_speed` and a method `describe()`. Create a class `ElectricCar` inheriting from `Vehicle` that adds an attribute `battery_capacity` and extends the `describe()` method with information about the battery.
+
+4. Create a class `Employee` with attributes `name` and `salary` and a method `get_bonus()` that returns 10% of the salary. Create a class `Manager` inheriting from `Employee` in which `get_bonus()` returns 20% of the salary. Demonstrate the use of both classes in a single list and iterate over it.
+
+5. Define a class `Logger` with a method `log(message)`. Create classes `FileLogger` and `ConsoleLogger` that inherit from `Logger` and override `log()` so that they print the message with an appropriate prefix indicating where it is written. Write a function `process(logger)` that takes any object of type `Logger` and calls `log()` on it.
+
+6. Create a class `BankAccount` with methods `deposit(amount)`, `withdraw(amount)` and `get_balance()`. Then create a class `SavingsAccount` that inherits from `BankAccount` but overrides `withdraw()` so that it does not allow a withdrawal if the balance would drop below a set minimum.
+
+7. Write a class `Notification` with a method `send(recipient, text)`. Create three derived classes: `EmailNotification`, `SmsNotification` and `PushNotification`, each of which overrides `send()` and prints a message appropriate for the given channel. Write a function `broadcast(notifications, recipient, text)` that iterates over a list of notifications and sends them polymorphically.
+
+8. Define a class `Converter` with a method `convert(value)` that returns the value unchanged. Create classes `CelsiusToFahrenheit` and `KilometersToMiles` inheriting from `Converter` that override `convert()` with the proper formulas. Use the `isinstance()` function to check the type of an object before conversion.
+
+9. Create a class hierarchy: `Media` (with an attribute `title`), and inheriting from it `Book` (with `author` and `pages`), `Movie` (with `director` and `duration`) and `Podcast` (with `host` and `episodes`). Each class should have a method `info()` that returns a description. Write a function that takes a list of `Media` objects and prints information about each of them.
+
+10. Create a class `PaymentMethod` with a method `pay(amount)`. Create classes `CreditCard`, `PayPal` and `BankTransfer` that inherit from `PaymentMethod`. Each class should override `pay()` and additionally implement a method `validate()` that checks the correctness of the data. In the `CreditCard` class, use `super()` to call the base version of `pay()` before adding its own logic.
+
+11. Write a class `TaskRunner` with methods `setup()`, `execute()` and `teardown()` and a method `run()` that calls these three methods in order. Create classes `DatabaseTask` and `ApiTask` that inherit from `TaskRunner` and override `setup()`, `execute()` and `teardown()` with their own implementations, but do not change the `run()` method — this is an example of the Template Method pattern.
+
+12. Define a class `User` with attributes `username` and `role` and a method `permissions()` that returns an empty list. Create classes `Admin`, `Editor` and `Viewer` inheriting from `User`, each of which returns a different list of permissions. Write a function `check_access(user, required_permission)` that checks whether a given user has the required permission, using polymorphism.
+
+13. Create an abstract class `Validator` (using the `abc` module) with an abstract method `validate(data)`. Create classes `EmailValidator`, `PhoneValidator` and `AgeValidator` that implement `validate()` and return `True` or `False` depending on the correctness of the data. Write a function `run_validations(validators, data)` that runs all validators and collects the results.
+
+14. Define a class `Plugin` with methods `activate()` and `process(data)`. Create at least three derived classes representing different plugins (e.g. `UpperCasePlugin`, `TrimPlugin`, `ReplacePlugin`). Write a class `Pipeline` that stores a list of plugins and has a method `run(data)` that passes the data through the successive plugins polymorphically.
+
+15. Create an example of multiple inheritance: a class `Flyable` with a method `fly()`, a class `Swimmable` with a method `swim()`, and a class `Duck` that inherits from both. Examine the method resolution order (MRO) using `Duck.__mro__` and write a short comment explaining the result.
+
+16. Define a class `EventEmitter` with methods `on(event_name, callback)` and `emit(event_name, *args)`. Create a class `ChatRoom` inheriting from `EventEmitter` that adds methods `join(user)`, `leave(user)` and `send_message(user, text)`, each of which emits the corresponding event. Then create a class `ModeratedChatRoom` inheriting from `ChatRoom` that overrides `send_message()` and filters out forbidden words before sending.
+
+17. Create a serialization system: a class `Serializer` with methods `serialize(obj)` and `deserialize(data)`. Create classes `JsonSerializer`, `CsvSerializer` and `XmlSerializer` that implement these methods. Then write a class `DataStore` that takes an object of type `Serializer` in its constructor (composition) and uses it to save and load data — compare this approach with inheritance and describe in a comment when composition is better.
+
+18. Define a metaclass `SingletonMeta` that makes every class using it able to have only one instance. Create a class `DatabaseConnection` using this metaclass. Then create a class `PooledDatabaseConnection` inheriting from `DatabaseConnection` and check whether the singleton mechanism also works for the derived class. Describe the result in comments.

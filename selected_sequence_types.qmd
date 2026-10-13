@@ -1,0 +1,41 @@
+# Selected Sequence Types
+
+1. Write a function `to_bytes_literal` that takes an ASCII string and returns the corresponding `bytes` object written as a literal with the `b` prefix. Then print the type of the result and its length.
+
+2. Write a function `count_byte` that takes a `bytes` object and a single byte (an integer in the range 0–255) and returns an integer equal to the number of occurrences of that byte in the sequence.
+
+3. Write a function `pack_three_doubles` that takes three floating-point numbers and returns a `bytes` object produced by serializing them with `struct.pack` using the format `"3d"`. Check the length of the result and make sure it is 24.
+
+4. Write a function `unpack_three_doubles` that takes a `bytes` object of length 24 and returns a tuple of three floating-point numbers recovered using `struct.unpack`.
+
+5. Write a function `pack_vector` that takes a list of floating-point numbers of any length and returns a `bytes` object with their serialization in the format `f"{len(values)}d"`. Then write a function `unpack_vector` that takes a `bytes` object and the number of elements (an integer) and returns a tuple of floating-point numbers.
+
+6. Write a function `to_mutable` that takes a `bytes` object and returns the corresponding `bytearray` object. Also write a function `to_immutable` that performs the conversion in the other direction.
+
+7. Write a function `replace_first_byte` that takes a `bytearray` object and a new byte value (an integer in the range 0–255), changes the first byte to the given value and returns nothing. The function should modify the buffer in place.
+
+8. Write a function `overwrite_double` that takes a `bytearray` object containing a serialized vector of floating-point numbers, an element index (an integer) and a new value (a floating-point number), and overwrites the indicated element using `struct.pack_into` with the format `"d"`. The function returns nothing.
+
+9. Write a function `build_int_array` that takes a list of integers and returns an `array.array` object with type code `'i'` (int32) containing these values.
+
+10. Write a function `array_memory_usage` that takes an `array.array` object and returns an integer equal to the estimated size of the memory it occupies in bytes. Use `buffer_info` and the `itemsize` field.
+
+11. Write a function `compare_memory` that takes an integer `n`, creates a regular list `list(range(n))` and an `array.array` with type code `'i'` containing the same elements, and then prints the memory size of both structures. For the list use `sys.getsizeof`; for the array use the product of the length and `itemsize`.
+
+12. Write a function `save_floats` that takes an `array.array` object with type code `'d'` and a file path (a string), and then writes the contents of the array to a binary file using `tofile`. The function returns nothing.
+
+13. Write a function `load_floats` that takes a file path (a string) and the number of elements to read (an integer) and returns an `array.array` object with type code `'d'` loaded from a binary file using `fromfile`.
+
+14. Write a function `roundtrip_array` that takes a list of floating-point numbers and a file path (a string). The function should create an `array.array` with type code `'d'`, write it to the file, read it back from the file and return the array that was read.
+
+15. Write a function `array_from_generator` that takes an integer `n` and returns an `array.array` object with type code `'d'` containing `n` values of the form `x * 0.1` for `x` ranging from 0 to `n-1`. Use a generator expression passed to the `array.array` constructor.
+
+16. Write a function `read_pgm_header` that takes the path to a PGM file (a string) and returns a tuple containing the width, height and maximum pixel value (three integers). The function should open the file in `"rb"` mode, read the line with the magic number `b"P5"`, skip comment lines beginning with `b"#"` and not read the pixels themselves.
+
+17. Write a function `read_pgm_pixels` that takes the path to a PGM file (a string) and returns a tuple: width (an integer), height (an integer), maximum value (an integer) and a `bytearray` object with the raw pixels. The function should verify the magic number `b"P5"` using an `assert` statement.
+
+18. Write a function `pixels_to_matrix` that takes a `bytearray` object with the pixels of an image, the width (an integer) and the height (an integer), and returns a list of lists of integers representing the image row by row. Use sequence slicing and the `list` constructor.
+
+19. Write a function `invert_pgm` that takes a `bytearray` object with the pixels of a PGM image and the maximum pixel value (an integer), modifies the buffer in place so that each pixel is replaced with the value `max_val - pixel` (the negative of the image), and returns nothing. Use a `for` loop over the indices.
+
+20. Write a function `pgm_pipeline` that takes the path to an input PGM file (a string) and the path to an output file (a string). The function should read the header and pixels of the image (analogously to `read_pgm_pixels`), store the pixels in an `array.array` with type code `'b'` or `'B'`, write this array to a binary file using `tofile`, and then read it back using `fromfile` and return the array that was read.

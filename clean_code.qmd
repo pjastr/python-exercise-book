@@ -1,0 +1,134 @@
+# Clean Code Principles
+
+The exercises in this chapter concern the recommendations of [PEP 8](https://peps.python.org/pep-0008/) and tools that support writing clean code. Tools are installed with the command `pip install <name>` (preferably in a virtual environment).
+
+1. Fix the names in the code below according to PEP 8 conventions (`snake_case` for variables and functions, `UPPER_CASE` for constants). Give the names a meaning that explains the role of each variable.
+```python
+def F(L):
+    S = 0
+    for X in L:
+        S += X
+    return S / len(L)
+
+A = [3, 5, 4]
+b = F(A)
+print(b)
+```
+
+2. Fix the formatting of the code below according to PEP 8 (indentation, spaces around operators and after commas, blank lines, line length):
+```python
+import math,random
+def area(r):return math.pi*r**2
+def main():
+  for i in range(5):
+    r=random.randint(1,10)
+    print("r =",r,"area =",round(area(r),2))
+main()
+```
+
+3. Install the `ruff` tool and run `ruff check` on the file from the previous exercise (the version before your fixes). Analyze the reported problems, then run `ruff format` and compare the result with your own fixes.
+
+4. Install the `pylint` tool and run it on a chosen solution from the Functions chapter. Improve the code so that it receives a score of at least 9/10. Write down in a comment which kinds of warnings appeared most often.
+
+5. Replace the "magic numbers" in the code below with constants that have readable names:
+```python
+def final_price(price):
+    if price > 500:
+        price = price * 0.9
+    return price * 1.23
+```
+
+6. Add docstrings (compliant with PEP 257) to the module and to every function from exercise 5. Describe the arguments, the return value and the raised exceptions. Display them using `help()`.
+
+7. Add type annotations (type hints) to the functions:
+```python
+def average(numbers):
+    return sum(numbers) / len(numbers)
+
+def find_user(users, name):
+    for user in users:
+        if user["name"] == name:
+            return user
+    return None
+```
+Install the `mypy` tool and use it to check code in which the `average` function is called with a string instead of a list.
+
+8. Simplify the code below by using an early return (`return`) instead of nested conditional statements:
+```python
+def can_vote(age, is_citizen, is_registered):
+    if age >= 18:
+        if is_citizen:
+            if is_registered:
+                return True
+            else:
+                return False
+        else:
+            return False
+    else:
+        return False
+```
+Then write the function in a single line as a `return` with a logical expression.
+
+9. Simplify the following code fragments using Python idioms:
+```python
+if is_valid == True:
+    print("OK")
+
+if len(items) == 0:
+    print("Empty")
+
+for i in range(len(names)):
+    print(i, names[i])
+
+result = []
+for x in range(10):
+    if x % 2 == 0:
+        result.append(x * x)
+```
+
+10. In the code below, the same fragment is repeated three times. Apply the DRY principle (*Don't Repeat Yourself*) by extracting a function:
+```python
+math_scores = [4, 5, 3, 5]
+print("Mathematics:", round(sum(math_scores) / len(math_scores), 2))
+physics_scores = [3, 4, 4]
+print("Physics:", round(sum(physics_scores) / len(physics_scores), 2))
+cs_scores = [5, 5, 4, 5]
+print("Computer Science:", round(sum(cs_scores) / len(cs_scores), 2))
+```
+
+11. The function below does too many things at once. Split it into smaller functions, each of which has a single responsibility (reading data, performing calculations, printing results):
+```python
+def process():
+    numbers = []
+    while True:
+        text = input("Number: ")
+        if text == "":
+            break
+        numbers.append(int(text))
+    even = [n for n in numbers if n % 2 == 0]
+    odd = [n for n in numbers if n % 2 != 0]
+    print("Even:", even, "sum:", sum(even))
+    print("Odd:", odd, "sum:", sum(odd))
+```
+
+12. Add usage examples to the docstring of the `is_prime(n)` function from the Functions chapter in the format of the `doctest` module (lines starting with `>>>`). Run the tests with the command `python -m doctest -v file_name.py`.
+
+13. Write a file `test_geometry.py` with tests for the functions of the `geometry.py` module from the Program Structure and Modules chapter, using `assert` statements in functions whose names start with `test_`. Install the `pytest` tool and run the tests with the command `pytest`. Deliberately introduce a bug into one of the functions and check how `pytest` reports the failure.
+
+14. Analyze the code below and list in a comment at least five problems related to the readability and quality of the code. Then rewrite it in a clean form.
+```python
+def calc(d):
+    # d - data
+    r = {}
+    for k in d:
+        t = 0
+        for i in d[k]:
+            t = t + i
+        r[k] = t / len(d[k]) if len(d[k]) != 0 else 0
+    l = []
+    for k in r:
+        if r[k] >= 4.5: l.append(k)
+    return r, l
+```
+
+15. Create a `pyproject.toml` file in the project directory with a configuration for the `ruff` tool (e.g. a maximum line length of 88 characters, enabled rules `E`, `F`, `I`, `N`). Run `ruff check` on the whole project from the previous chapters and fix the reported problems.

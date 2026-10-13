@@ -1,0 +1,86 @@
+# Sets
+
+1. Create a set `colors` containing five colour names. Print the set and its size (`len()`). Run the program several times and check whether the order of the printed elements is always the same as in the definition.
+
+2. Create an empty set `visited`. Check the type of the expression `{}` and explain in a comment why an empty set must be created with `set()`. Then add three city names to the set using the `.add()` method, including one city twice. Print the result.
+
+3. You are given the list:
+```python
+numbers = [3, 7, 3, 1, 9, 7, 7, 2, 1, 3]
+```
+Using a set, print the number of distinct values in the list and a sorted list of these values (`sorted()`).
+
+4. You are given the set `fruits = {"apple", "banana", "cherry"}`. Remove the element `"banana"` from it using the `.remove()` method, then try to remove the element `"mango"`, first with the `.remove()` method and then with `.discard()`. Describe the difference between these methods in a comment.
+
+5. Read a word from the user and use the `in` operator to check whether it belongs to the set of reserved words:
+```python
+keywords = {"if", "else", "elif", "for", "while", "def", "return", "import", "class"}
+```
+
+6. You are given the sets:
+```python
+python_students = {"Alice", "Bob", "Charlie", "Diana", "Eve"}
+java_students = {"Charlie", "Eve", "Frank", "Grace"}
+```
+Print (using the `|`, `&`, `-`, `^` operators):
+
+- the students learning at least one language,
+- the students learning both languages,
+- the students learning only Python,
+- the students learning exactly one language.
+
+Then write the same operations using the `.union()`, `.intersection()`, `.difference()` and `.symmetric_difference()` methods.
+
+7. Read two strings from the user and print:
+   - the letters that occur in both strings,
+   - the letters that occur only in the first string,
+   - the number of distinct letters used in both strings combined.
+
+8. Read a sentence from the user and check whether it is a pangram, i.e. whether it contains all the letters of the English alphabet (`"abcdefghijklmnopqrstuvwxyz"`). Letter case does not matter. If the sentence is not a pangram, print the missing letters in alphabetical order.
+
+9. You are given the sets:
+```python
+required_skills = {"python", "sql", "git"}
+candidate_a = {"python", "sql", "git", "docker"}
+candidate_b = {"python", "excel"}
+```
+Using the `.issubset()` and `.issuperset()` methods (or the `<=`, `>=` operators), check which candidate has all the required skills. For the candidate who does not, print the missing skills. Also use the `.isdisjoint()` method to check whether candidate B has any of the required skills at all.
+
+10. Using a set comprehension, create the set of remainders of dividing the squares of the numbers from 1 to 50 by 7. Print the sorted result.
+
+11. You are given a list of words:
+```python
+words = ["Python", "java", "python", "C", "JAVA", "Rust", "c", "rust", "Go"]
+```
+Create a set `unique_languages` containing the language names without repetitions, ignoring letter case (written in lowercase). Print the number of distinct languages.
+
+12. You are given the list:
+```python
+raw_data = [5, 3, 5, 1, 3, 8, 1, 9, 8]
+```
+Create a list `unique_data` without duplicates, preserving the order of first occurrence. To check whether an element has already occurred, use a helper set `seen`.
+
+13. You are given the list:
+```python
+numbers = [4, 9, 1, 4, 7, 9, 2, 4, 1]
+```
+Using two sets (`seen` and `duplicates`) and a single loop, determine the set of values that occur in the list more than once.
+
+14. You are given two lists of order IDs:
+```python
+orders_january = [101, 102, 103, 104, 105, 106]
+orders_february = [104, 105, 106, 107, 108]
+```
+Print the orders placed only in January, only in February, and in both months. Print the result of each operation as a sorted list.
+
+15. Create a set of tuples representing the coordinates of the squares visited by a robot:
+```python
+moves = ["R", "R", "U", "L", "D", "D", "R", "U", "U"]
+```
+The robot starts at square `(0, 0)`; the move `R` increases `x` by 1, `L` decreases `x`, `U` increases `y`, and `D` decreases `y`. Print how many distinct squares the robot visited (including the starting square) and whether it visited any square more than once.
+
+16. Create the set `frozen_primes = frozenset({2, 3, 5, 7})`. Check whether it is possible to add an element to it. Then create a set of sets whose elements are `frozenset` objects, and explain in a comment why the elements of a set cannot be ordinary sets or lists.
+
+17. Read a natural number `n` from the user and determine the set of prime numbers less than `n` using the Sieve of Eratosthenes, storing the composite numbers in the set `composite`. Print the result as a sorted list.
+
+18. For `n = 100 000`, create a list and a set containing the numbers from 0 to `n - 1`. Using the `time` module (`time.perf_counter()`), measure the total execution time of 1000 membership tests (`in`) for the number `n - 1` in the list and in the set. Print the results and explain the difference in a comment.

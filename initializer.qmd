@@ -1,0 +1,43 @@
+# Initializer
+
+For each class, create an object of it outside the class at least once.
+
+1. Write a class `Book` with an initializer that takes two arguments — `title` and `author`. Both should be stored as instance attributes. Create two objects of this class and print their attributes.
+
+2. Write a class `Circle` with an initializer that takes an argument `radius`. Add an instance attribute `area` that is calculated automatically when the object is created, based on the given radius.
+
+3. Write a class `Student` with an initializer that takes `name` and an optional argument `grade` with the default value "A". Create one student with the default grade and another one with an explicitly given grade.
+
+4. Write a class `Color` with an initializer that takes three arguments — `red`, `green` and `blue`, each with the default value 0. Create an object by passing the arguments exclusively as keyword arguments.
+
+5. Write a class `ShoppingList` with an initializer that takes `owner` as a required argument. The initializer should additionally create an empty attribute `items`, which is a list. Do not pass this list as an argument.
+
+6. Write a class `Config` with an initializer that takes `app_name` as a required argument. The initializer should create an empty attribute `settings`, which is a dictionary. Then manually add two key-value pairs to this dictionary on the created object.
+
+7. Write a class `Playlist` with an initializer that takes `name` and an optional argument `songs`, which should default to an empty list. Correctly solve the mutable default argument problem by using the value None and a conditional assignment inside the initializer.
+
+8. Write a class `TemperatureReading` with an initializer that takes `value` and `unit` with the default value "Celsius". Add validation — if `unit` is not one of the strings "Celsius", "Fahrenheit" or "Kelvin", the initializer should raise a ValueError with an appropriate message.
+
+9. Write a class `User` with an initializer that takes `username` and `email`. Add validation that checks whether `email` contains the "@" character — if not, the initializer should raise a ValueError. Test creating an object with a valid and an invalid address.
+
+10. Write a class `BankAccount` with an initializer that takes `owner` and an optional `balance` with the default value 0. Add validation — if `balance` is a negative number, the initializer should raise a ValueError. Create an account with a positive balance and test an attempt to create an account with a negative balance.
+
+11. Write a class `Product` with an initializer that takes `name`, `price` and an optional `tags` (a list of tags with the default value None). Add validation — `price` must be a positive number and `name` cannot be an empty string. Solve the mutable default argument problem for `tags`.
+
+12. Write a class `Scoreboard` with an initializer that takes `game_name` and an optional `scores`, which is a dictionary (None by default). Inside the initializer, create a copy of the given dictionary instead of assigning the reference directly. Show why this matters by modifying the original dictionary after the object has been created.
+
+13. Write a class `DateRange` with an initializer that takes `start_date` and `end_date` as strings in the "YYYY-MM-DD" format. The initializer should convert them into `datetime.date` objects and validate that `start_date` is not later than `end_date`.
+
+14. Write a class `Survey` with an initializer that takes `title`, `*questions` (any number of questions as `*args`) and an optional `anonymous` with the default value True. Store the questions as a list in an instance attribute. Create an object with five questions.
+
+15. Write a class `ServerConfig` with an initializer that takes `host` and `port` as positional-only arguments (using `/`) and `timeout` and `max_retries` as keyword-only arguments (using `*`), both with default values. Show a correct and an incorrect call.
+
+16. Write a class `Matrix` with an initializer that takes an argument `data`, which is a list of lists (a two-dimensional matrix). Add validation that checks whether all inner lists have the same length — if not, raise a ValueError. Also store the attributes `rows` and `cols` calculated from the data.
+
+17. Write a class `PasswordPolicy` with an initializer that takes `min_length`, `require_uppercase`, `require_digit` and `require_special_char` — all with reasonable default values. Add validation — `min_length` must be an integer in the range from 6 to 128, and the remaining arguments must be of type bool. Raise a TypeError or a ValueError if the conditions are not met.
+
+18. Write a class `EventLog` with an initializer that takes `source` and an optional `events` (a list of dictionaries, None by default). Each dictionary in the list must contain the keys "timestamp" and "message" — add validation that checks this for every element. The initializer should create a deep copy of the list of dictionaries using `copy.deepcopy`.
+
+19. Write a class `QueryBuilder` with an initializer that takes `table_name` and `**default_filters`. The initializer should validate that `table_name` is a non-empty string consisting only of letters, digits and underscores (protection against SQL injection). The values from `**default_filters` should be stored as a dictionary in an instance attribute. Create an object with three filters.
+
+20. Write a class `Pipeline` with an initializer that takes `name`, `*steps` and `**options`. Each element of `steps` must be a callable — add validation using the `callable()` function. The options from `**options` should be stored in the `config` attribute as a dictionary. Add validation that checks whether `name` matches the regex pattern `^[a-z][a-z0-9_]*$`. Create an object by passing three lambda functions as steps and two configuration options.

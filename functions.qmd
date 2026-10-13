@@ -1,0 +1,63 @@
+# Functions
+
+1. Write a function `print_header()` that takes no arguments and prints a frame containing the text `Introduction to Programming`. Call it twice.
+
+2. Write a function `square(x)` that returns the square of the number `x`. Call it for several values and print the results. Then use it to compute the sum of the squares of the numbers from 1 to 10.
+
+3. Write a function `say_hello(name)` that only prints a greeting (without a `return` statement). Assign the result of calling it to a variable `result` and print that variable. In a comment, explain where the value `None` came from.
+
+4. Write a function `is_even(n)` that returns `True` if the number is even and `False` otherwise. Write the function body in a single line, returning the result of the comparison directly. Use this function in a loop to print the even numbers from 1 to 20.
+
+5. Write a function `max_of_three(a, b, c)` that returns the largest of three numbers without using the `max()` function. Add a docstring describing what the function does and display it with `help(max_of_three)`.
+
+6. Write a function `is_prime(n)` that checks whether a number is prime. Exit the function with a `return` statement as soon as a divisor is found. Use it to print all prime numbers less than 100.
+
+7. Write a function `min_max_avg(numbers)` that takes a list of numbers and returns the minimum, maximum and average at once (as a tuple). Call it and unpack the result into three variables.
+
+8. Write a function `count_vowels(text)` that returns the number of vowels in a string, and a function `count_consonants(text)` that returns the number of consonants (consider letters only). Test both functions on several strings.
+
+9. Write a function `power(base, exponent=2)` in which the exponent has a default value. Call it with one and with two arguments.
+
+10. Write a function `format_price(amount, currency="PLN", decimals=2)` that returns a string with the amount rounded to the given number of decimal places, followed by the currency symbol. Call it in several ways, making use of the default values.
+
+11. Write a function `add_item(item, items=[])` that adds an element to a list and returns the list. Call it three times without passing the second argument and print the results. Explain in a comment why the result is surprising, then fix the function by using `None` as the default value.
+
+12. Analyze the code below, predict what will be printed, then run it and check your answer:
+```python
+x = 10
+
+def show():
+    x = 5
+    print("inside:", x)
+
+show()
+print("outside:", x)
+```
+In a comment, explain the concepts of local and global variables.
+
+13. Check what happens when you run the code below and explain the cause of the error:
+```python
+counter = 0
+
+def increment():
+    counter = counter + 1
+
+increment()
+```
+Fix the code in two ways: using the `global` keyword and without it (the function takes the value as an argument and returns the new one). In a comment, indicate which solution is better and why.
+
+14. Create a global dictionary `settings = {"theme": "light", "language": "pl"}` and a function `set_option(key, value)` that changes a value in it. Explain in a comment why the `global` keyword is not needed in this case, while it was needed in task 13.
+
+15. Write a function `print_report(scores)` that takes a dictionary `{name: points}` and prints a report. Inside it, define a nested function `grade(points)` that returns a grade based on the number of points (any scale), and use it when printing each line of the report. Check whether the `grade` function can be called from outside `print_report`.
+
+16. Write a function `make_multiplier(factor)` that returns a nested function multiplying its argument by `factor`. Use it to create the functions `double` and `triple` and test them.
+
+17. Write a function `make_counter()` that returns a nested function which, on each call, increases an internal counter by 1 and returns its current value. Use the `nonlocal` keyword. Show that two counters created by `make_counter()` work independently.
+
+18. Write a recursive function `factorial(n)` that computes the factorial, as well as its iterative version `factorial_iter(n)`. Compare the results for `n` from 0 to 10.
+
+19. Write a recursive function `fibonacci(n)` that returns the `n`-th term of the Fibonacci sequence. Add a global call counter and check how many times the function is called for `n = 10`, `n = 20` and `n = 25`. In a comment, explain where such a large number of calls comes from.
+
+20. Write a recursive function `sum_digits(n)` that returns the sum of the digits of a natural number, and a recursive function `is_palindrome(text)` that checks whether a string is a palindrome (by comparing the first and last characters and calling itself on the string without them).
+
+21. Write a program for managing a to-do list, divided into functions: `add_task(tasks, title)`, `remove_task(tasks, index)`, `show_tasks(tasks)` and `main()`, which displays a menu in a loop, reads the user's choice and calls the appropriate functions. The task list should be created in the `main()` function and passed to the other functions as an argument — do not use global variables.

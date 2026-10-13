@@ -1,0 +1,63 @@
+# Arrays
+
+In the exercises in this chapter, use the `array` type from the standard `array` module (`from array import array`). Unlike a list, an array stores elements of only one fixed numeric type, specified by a type code (e.g. `'i'` — integers, `'d'` — floating-point numbers).
+
+1. Create an array `numbers` with the type code `'i'` containing the numbers `[4, 8, 15, 16, 23, 42]`. Print the array, its length, and its first and last elements.
+
+2. Create an array `measurements` with the type code `'d'` containing any five measurements. Print its `typecode` and `itemsize` attributes (the size of a single element in bytes). Compare `itemsize` with that of an array with the type code `'i'`.
+
+3. Create an empty array with the type code `'i'`. Using a `for` loop and the `.append()` method, add the squares of the numbers from 1 to 10 to it. Then, using the `.extend()` method, add the numbers from the list `[200, 300, 400]` all at once. Print the result.
+
+4. You are given the array:
+```python
+values = array('i', [10, 20, 30, 40, 50, 60, 70])
+```
+Using slicing, print: the first three elements, every second element, and the elements in reverse order. Check the type of the result of slicing.
+
+5. For the array from the previous exercise:
+   - change the element at index `2` to `35`,
+   - insert the number `5` at the beginning of the array (`.insert()`),
+   - remove the first occurrence of the number `40` (`.remove()`),
+   - remove and print the last element (`.pop()`).
+
+   Print the array after each operation.
+
+6. Create an array with the type code `'i'` and try to add to it:
+   - the floating-point number `3.5`,
+   - the string `"7"`.
+
+   Read the error messages and explain in comments how an array differs from a list in this respect. Also check what happens when you add an integer to an array with the type code `'d'`.
+
+7. Create an array with the type code `'b'` (signed 1-byte integers) and try to add the numbers `127`, `128` and `-129` to it. Describe in a comment where the limit on the range of values comes from.
+
+8. You are given the array:
+```python
+grades = array('i', [3, 5, 4, 5, 2, 5, 4, 3, 5])
+```
+Print how many times the grade `5` occurs (`.count()`), the index of the first occurrence of the grade `2` (`.index()`), the sum and the mean of the grades, and the highest and lowest grade (`max()`, `min()`).
+
+9. You are given the list `prices = [19.99, 5.49, 3.20, 12.00, 7.75]`. Create an array with the type code `'d'` from it, then in a loop increase each price by 23% (VAT), modifying the array elements by index. Finally, convert the array back to a list using the `.tolist()` method and print the result.
+
+10. You are given the array:
+```python
+temperatures = array('d', [12.5, 14.1, 9.8, 15.3, 17.0, 11.2, 13.4])
+```
+Using a `for` loop, find (without using `max()` and `min()`) the index of the day with the highest and the lowest temperature. Also count on how many days the temperature was higher than the mean.
+
+11. Create an array with the type code `'i'` containing the numbers from 1 to 20. Using a list comprehension, create from it a new array containing only the numbers divisible by 3. Reverse it in place using the `.reverse()` method and print the result.
+
+12. You are given two arrays of the same length:
+```python
+a = array('d', [1.0, 2.0, 3.0])
+b = array('d', [4.0, 5.0, 6.0])
+```
+Calculate and print:
+
+- an array `c` that is the sum of the corresponding elements,
+- the dot product of the vectors `a` and `b`.
+
+Use `zip()`. Also check what the expression `a + b` gives and why it is not a vector sum.
+
+13. Keep reading integers from the user until they enter an empty string, and store them in an array with the type code `'i'`. Then sort the elements (the `sorted()` function returns a list — create a new array from it) and print the median.
+
+14. Create an array `data_array` (type code `'i'`) containing the numbers from 0 to 9999 and print how many bytes the data stored in it occupies (`len(data_array) * data_array.itemsize`). In a comment, explain why a list with the same numbers takes up much more memory (hint: what does a list actually store?).

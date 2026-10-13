@@ -1,0 +1,42 @@
+# Function Arguments
+
+
+1. Write a function `add_numbers(a, b)` that takes two positional arguments of type int and returns their sum. Call it with the arguments 3 and 5.
+
+2. Write a function `greet(name, greeting="Hello")` that takes a name as a required argument and a greeting as an argument with a default value. The function should return a formatted greeting text. Call it in two ways — with one and with two arguments.
+
+3. Write a function `describe_pet(animal_type, pet_name)` and call it, passing both arguments as keyword arguments in the reverse order to the one in the function definition.
+
+4. Write a function `make_sandwich(*ingredients)` that takes any number of positional arguments representing sandwich ingredients and returns them as a single list. Call it with three and then with six arguments.
+
+5. Write a function `build_profile(**user_info)` that takes any number of keyword arguments and returns them as a dictionary. Call it, passing at least four different pieces of information about a user.
+
+6. Write a function `calculate_power(base, exponent=2)` in which the argument `exponent` has a default value of 2. Call it three times — without specifying the exponent, with an exponent of 3, and with the exponent passed as a keyword argument.
+
+7. Write a function `format_address(street, city, zip_code, country="Poland")` that combines address data into a single formatted string. Call it, mixing positional and keyword arguments in a single call.
+
+8. Write a function `apply_discount(price, discount_percent, /, tax_rate=0.23)` that uses the `/` operator to force `price` and `discount_percent` to be positional-only arguments. Show that an attempt to pass them as keyword arguments results in an error.
+
+9. Write a function `register_user(username, *, email, age)` that uses the `*` operator to force `email` and `age` to be passed only as keyword arguments. Call it correctly, then show an incorrect call using positional arguments only.
+
+10. Write a function `mix_paint(primary, secondary, /, *, finish="matte")` that combines both mechanisms — positional-only arguments (before `/`) and keyword-only arguments (after `*`). Call it in three different ways.
+
+11. Write a function `log_message(message, *tags, level="INFO")` that takes one required argument, any number of tags via `*args`, and a keyword argument with a default value at the end. Call it with two tags and a changed logging level.
+
+12. Write a function `create_report(title, *sections, **metadata)` that combines a required argument, `*args` and `**kwargs` in a single signature. Call it, passing a title, three sections and two key-value pairs as metadata.
+
+13. Write two functions — `square(n)`, which returns the square of a number, and `double(n)`, which returns the number doubled. Then write a function `apply_operation(func, value)` that takes another function as an argument and calls it on the given value. Test it with both functions.
+
+14. Write a function `process_data(data, *, transformer=None, validator=None)` in which both optional arguments are functions (or None). If `transformer` is not None, the function should transform the data, and if `validator` is not None, it should validate the result. Call it with a lambda function as the transformer.
+
+15. Write a function `repeat_action(action, times=1, /, *, delay=0)`, then call it, passing a lambda function that prints some text as the `action` argument. Show three calls with different combinations of positional and keyword arguments.
+
+16. Write a function `merge_configs(*config_dicts, **overrides)` that takes any number of dictionaries as `*args`, merges them into one, and then overrides the values passed as `**kwargs`. Test it with three configuration dictionaries and two overrides.
+
+17. Write a function `safe_divide(numerator, denominator, /, *, on_error="return_none")` that divides two numbers and, in the case of division by zero, behaves according to the value of the `on_error` argument — it can return None, return zero, or raise an exception. Test each of the three modes.
+
+18. Write a function `pipeline(value, *transformations)` that takes an initial value and any number of functions. The function should apply each of them in turn to the result of the previous one. Test it by passing three lambda functions that form a chain of transformations.
+
+19. Write a decorator `validate_types(*expected_types)` that takes, via `*args`, the expected types of the successive arguments of the decorated function. Before calling the function, the decorator should check whether the types of the passed arguments match the expected ones and raise a TypeError if they do not. Apply it to a function `concat_strings(a, b)`.
+
+20. Write a function `create_dispatcher()` that returns two inner functions — `register(name, func)` for registering a function under a given name, and `call(name, *args, **kwargs)` for calling a registered function with arbitrary arguments. Test the mechanism by registering three functions with different signatures and calling them through the dispatcher with various combinations of positional, keyword and default arguments.

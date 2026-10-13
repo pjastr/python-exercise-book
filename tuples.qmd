@@ -1,0 +1,120 @@
+# Tuples
+
+1. Create a tuple `weekdays` containing the names of the five working days (as strings). Print the whole tuple, then print the first and the last element separately.
+
+2. Create an empty tuple `empty_tuple` and a single-element tuple `single_item` storing the number `42`. Print both tuples together with their types (`type()`). Check what happens if you omit the comma in the single-element tuple, and explain the result in a comment.
+
+3. You are given the tuple:
+```python
+months = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+```
+Using only slicing:
+- get the summer months (Jun–Aug),
+- get every third month,
+- get the last four months,
+- reverse the order of the elements.
+
+4. You are given the tuple:
+```python
+coordinates = (52.23, 21.01)
+```
+Try to change the second element to `19.94`. Catch the `TypeError` exception using a `try/except` block and print a message explaining why the operation failed.
+
+5. You are given the tuple:
+```python
+grades = (4, 5, 3, 5, 4, 5, 2, 4, 5, 3)
+```
+Print how many times the grade `5` occurs (`.count()`), and give the index of the first occurrence of the grade `2` (`.index()`).
+
+6. You are given the tuple:
+```python
+person = ("Alice", 30, "developer", "Warsaw")
+```
+Unpack it into the variables `name`, `age`, `role`, `city` in a single line. Then unpack it again, but this time assign only the first name to `name` and the rest to the variable `rest` using the `*` operator.
+
+7. Create two variables `x = 10` and `y = 20`. Swap their values in a single line, using tuple packing/unpacking (without a temporary variable). Print the values before and after the swap.
+
+8. Create a dictionary `city_distances` in which the keys are tuples of two cities and the values are distances in kilometres, e.g.:
+```python
+("Warsaw", "Berlin"): 573
+```
+Add at least 4 entries. Write code that, for a given pair of cities, prints the distance or a message that the route does not exist.
+
+9. You are given the tuple:
+```python
+products = ("laptop", "mouse", "keyboard", "monitor", "headset")
+```
+Using `enumerate()` with the parameter `start=1`, print a numbered list of products in the format:
+```
+1. laptop
+2. mouse
+...
+```
+
+10. You are given two lists:
+```python
+country_names = ["Poland", "Germany", "France", "Spain"]
+country_codes = ["PL", "DE", "FR", "ES"]
+```
+Combine them into a tuple of tuples `country_data` using `zip()` wrapped in `tuple()`. Print the result and, separately, the third element.
+
+11. You are given a list of tuples:
+```python
+runners = [("Alice", 12.5), ("Bob", 11.8), ("Charlie", 13.1), ("Diana", 11.2)]
+```
+Sort the list in ascending order by time (the second element of the tuple), using `sorted()` and the `key` parameter with a `lambda` expression. Print the sorted list.
+
+12. Import `namedtuple` from the `collections` module. Create a type `Book` with the fields `title`, `author`, `year`, `pages`. Create three book instances and put them in the list `library`. Print the title and author of each book by iterating over the list.
+
+13. Write a function `analyze_numbers(data)` that takes a tuple of numbers and returns a tuple of three values: the minimum, the maximum and the arithmetic mean. Call the function and unpack the result into three variables `min_val`, `max_val`, `avg_val`.
+
+14. You are given the tuple:
+```python
+original = (10, 20, 30, 40, 50)
+```
+Convert the tuple to a list, add the element `60`, remove the element `20`, sort in descending order, and then convert it back to a tuple `modified`. Print the input tuple and the resulting tuple.
+
+15. You are given a structure storing data about students:
+```python
+classroom = (
+    ("Alice", (90, 85, 92)),
+    ("Bob", (78, 82, 88)),
+    ("Charlie", (95, 91, 87))
+)
+```
+Write code that prints the name of each student together with the mean of their grades, using only indexing and a `for` loop.
+
+16. You are given the tuples:
+```python
+version_a = (2, 8, 1)
+version_b = (2, 8, 3)
+version_c = (2, 10, 0)
+version_d = (3, 0, 0)
+```
+Print the results of the comparisons `version_a < version_b`, `version_b < version_c` and `version_c < version_d`. In a comment, explain the principle of lexicographic comparison of tuples.
+
+17. Create a list of tuples representing the coordinates of points:
+```python
+raw_points = [(1, 2), (3, 4), (1, 2), (5, 6), (3, 4), (7, 8)]
+```
+Convert the list to a `set` to remove duplicates, and then convert the result back to a sorted list of tuples `unique_points`. Print the result and explain in a comment why tuples can be elements of a set, while lists cannot.
+
+18. You are given a list of dictionaries:
+```python
+sensors = [
+    {"id": "S1", "temp": 22.5, "humidity": 45},
+    {"id": "S2", "temp": 19.8, "humidity": 60},
+    {"id": "S3", "temp": 25.1, "humidity": 38},
+    {"id": "S4", "temp": 18.3, "humidity": 72},
+]
+```
+Using a generator expression and `tuple()`, create a tuple `high_humidity` containing tuples `(id, humidity)` only for the sensors whose humidity exceeds 50.
+
+19. Import the `sys` module. Create a list `data_list` and a tuple `data_tuple` containing the same 1000 integers (from 0 to 999). Compare the size of both structures using `sys.getsizeof()`. Print the results and explain in a comment why the tuple takes up less memory.
+
+20. Write three functions that operate only on tuples (without converting them to a list):
+    - `tuple_replace(data, index, value)` — returns a new tuple in which the element at the given index has been replaced with `value` (use slicing and tuple concatenation).
+    - `tuple_insert(data, index, value)` — returns a new tuple with the element inserted at the given position.
+    - `tuple_remove(data, index)` — returns a new tuple without the element at the given index.
+
+    Test each function on the tuple `sample = (10, 20, 30, 40, 50)` and print the results.

@@ -1,0 +1,43 @@
+# Decorators
+
+In addition to defining each decorator, use it at least once.
+
+1. Write a decorator `call_counter` that counts how many times a given function has been called. Store the counter as an attribute of the wrapper function. After each call, print the current value of the counter to the console.
+
+2. Write a decorator `log_call` that prints the function's name before calling it and prints the returned value after the call. Use the `__name__` attribute of the original function.
+
+3. Write a decorator `timer` that measures the function's execution time in seconds (the `time` module) and prints it when the function finishes. Return the result of the original function unchanged.
+
+4. Write a decorator `suppress_errors` that catches all exceptions raised by the function, prints a message with the error text and returns `None` instead of propagating the exception.
+
+5. Write a decorator `repeat(n)` that takes an argument `n` and causes the decorated function to be called `n` times with the same arguments. The decorator returns the result of the last call.
+
+6. Write a decorator `cache_result` that stores the results of function calls in a dictionary, using the positional arguments as the key. If the function has already been called with the same arguments, return the result from the dictionary without calling it again.
+
+7. Write a decorator `validate_types` that takes types as positional arguments (e.g. `@validate_types(int, int)`). Before calling the function, check whether the passed arguments have the corresponding types. If not, raise `TypeError` with a descriptive message.
+
+8. Write a decorator `retry(max_attempts, delay)` that, when an exception occurs, retries the function call up to `max_attempts` times, waiting `delay` seconds between attempts. If all attempts fail, raise the last exception.
+
+9. Write a decorator `flatten_result` that, after calling the function, checks whether the result is a nested list (a list of lists). If so, it flattens it into a single-level list. If the result is not a list, it returns it unchanged.
+
+10. Write a decorator `sort_result(key=None, reverse=False)` that sorts the function's result if it is a list. The `key` and `reverse` parameters work the same way as in the built-in `sorted` function. If the result is not a list, return it unchanged.
+
+11. Write a decorator `transform_keys(func)` that takes a transforming function (e.g. `str.upper`). If the decorated function returns a dictionary, apply the transformation to all keys of that dictionary. If the result is not a dictionary, return it unchanged.
+
+12. Write a decorator `ensure_keys(*required_keys)` that checks whether the dictionary returned by the decorated function contains all the required keys. If any key is missing, raise `KeyError` with a list of the missing keys. If the result is not a dictionary, raise `TypeError`.
+
+13. Write a decorator `paginate(page_size)` that takes a page size. If the decorated function returns a list, the decorator turns it into a list of sublists, each of which has at most `page_size` elements. If the result is not a list, return it unchanged.
+
+14. Write a decorator `filter_result(predicate)` that takes a filtering function. If the decorated function returns a list, the decorator keeps only those elements for which `predicate` returns `True`. If the result is not a list, return it unchanged.
+
+15. Write a decorator `default_args(**defaults)` that takes default values for keyword arguments. If the decorated function is called without any of these arguments, the decorator adds it automatically. Use the `inspect` module to examine the function's signature.
+
+16. Write a decorator `audit_log(log_list)` that takes an external list as an argument. After each call of the decorated function, it appends to this list a dictionary containing the keys: `function_name`, `args`, `kwargs`, `result` and `timestamp` (use `datetime.datetime.now()`).
+
+17. Write a decorator `compose(*decorators)` that takes any number of other decorators and applies them in turn to the decorated function (the first decorator in the list wraps the function first, the last one last). Test it by combining at least two of the decorators written earlier.
+
+18. Write a decorator `rate_limit(max_calls, period)` that allows at most `max_calls` calls of the decorated function within `period` seconds. If the limit is exceeded, raise a `RuntimeError` exception with information on how many seconds remain until it is unblocked.
+
+19. Write a decorator `dispatch_on_type` that registers different implementations of a function depending on the type of the first argument. The decorator exposes a `register(type, func)` method on the wrapper function. When called, it checks the type of the first argument and delegates to the appropriate registered implementation. If the type is not registered, it calls the default function.
+
+20. Write a decorator `pipeline(*transformers)` that takes any number of transforming functions. After calling the decorated function, it passes its result through each transformer in turn. If any transformer raises an exception, stop the chain, print a diagnostic message indicating which transformer failed, and return the result from before that step.

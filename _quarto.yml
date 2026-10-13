@@ -1,0 +1,72 @@
+project:
+  type: book
+  resources:
+  - "data/*"
+
+book:
+  title: "Python Exercise Book"
+  author: Piotr Jastrzębski
+  date: today
+  cover-image: pop.jpg
+  chapters:
+    - index.qmd
+    - part: "Introduction to Python"
+      chapters:
+        - input_output.qmd
+        - conditionals.qmd
+        - loops.qmd
+        - lists.qmd
+        - arrays.qmd
+        - tuples.qmd
+        - sets.qmd
+        - dictionaries.qmd
+        - functions.qmd
+        - function_arguments.qmd
+        - fstrings.qmd
+        - exceptions.qmd
+        - files.qmd
+        - modules.qmd
+        - clean_code.qmd
+    - part: "Object-Oriented Programming"
+      chapters:
+        - simple_classes.qmd
+        - initializer.qmd
+        - properties.qmd
+        - inheritance_polymorphism.qmd
+        - repr_str.qmd
+        - containers.qmd
+        - arithmetic_emulation.qmd
+        - comparison_emulation.qmd
+    - part: "Advanced Topics"
+      chapters:
+        - decorators.qmd
+        - regex.qmd
+        - iterators_generators.qmd
+        - bitwise_operators.qmd
+        - selected_sequence_types.qmd
+        - lambda_expressions.qmd
+        - functools.qmd
+  downloads: [pdf, epub]
+  repo-url: https://github.com/pjastr/python-exercise-book
+  repo-actions: [issue]
+
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: solar
+    lang: en
+  pdf:
+    lang: en
+    header-includes: |
+      \titlehead{\includegraphics[width=6in]{pop.jpg}}
+  epub:
+    lang: en
+    cover-image: pop.jpg
+    toc: true
+
+

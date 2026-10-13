@@ -1,0 +1,41 @@
+# Arithmetic Emulation
+
+1. Write a class `Temperature` with an attribute `celsius`. Implement the `__add__` method, which makes it possible to add two `Temperature` objects — the result should be a new object with the sum of the values.
+
+2. Write a class `Counter` that stores an integer. Implement the `__add__` and `__sub__` methods so that `Counter` objects can be added to and subtracted from each other using the `+` and `-` operators.
+
+3. Write a class `Vector2D` with attributes `x` and `y`. Implement the `__mul__` method, which allows multiplying a vector by a scalar (a number), returning a new vector with scaled coordinates.
+
+4. Write a class `Price` that stores an amount as a `float`. Implement the `__truediv__` method so that the `/` operator divides the price by a given number and returns a new `Price` object.
+
+5. Write a class `Weight` with an attribute `kg`. Implement the `__add__` and `__sub__` methods with support for adding/subtracting both another `Weight` object and a plain number (a scalar).
+
+6. Write a class `Wallet` with an attribute `balance`. Implement `__floordiv__` (the `//` operator), which performs integer division of the balance by a given number, and `__mod__` (the `%` operator), which returns the remainder of the division.
+
+7. Write a class `DataSeries` that stores a list of numeric values. Implement `__add__`, which performs element-by-element (elementwise) addition of two `DataSeries` objects of the same length. If the lengths do not match, raise a `ValueError`.
+
+8. Write a class `Score` with an attribute `points`. Implement `__radd__` so that the expression `10 + score_obj` correctly delegates the operation to the `Score` object — test that both `score + 10` and `10 + score` work.
+
+9. Write a class `Matrix1D` that stores a one-dimensional list of values. Implement `__mul__` handling two scenarios: multiplication by a scalar and the element-by-element product with another `Matrix1D` object. Add `__rmul__` for expressions such as `3 * matrix_obj`.
+
+10. Write a class `Measurement` with attributes `value` and `unit`. Implement `__add__` and `__sub__`, which allow combining only measurements with the same `unit` — if the units do not match, raise a `TypeError` with a message describing the conflict.
+
+11. Write a class `Percentage` with an attribute `value` (e.g. 75 means 75%). Implement `__mul__` so that `Percentage(50) * 200` returns a `float` equal to 100.0 (calculating a percentage of a number), and multiplying two `Percentage` objects returns a new `Percentage` object with the compound percentage.
+
+12. Write a class `BankAccount` with an attribute `balance`. Implement `__iadd__` and `__isub__` (the `+=` and `-=` operators) so that they modify the balance in place. In the case of `__isub__`, prevent the balance from going below zero by raising a `ValueError`.
+
+13. Write a class `ComplexNumber` with attributes `real` and `imag`. Implement the `__add__`, `__sub__` and `__mul__` methods according to the rules of complex number arithmetic. Also implement `__repr__` so that the result is displayed in the format `a + bi`.
+
+14. Write a class `Polynomial` that represents a polynomial as a list of coefficients (the list index corresponds to the power). Implement `__add__` (adding polynomials) and `__mul__` (multiplying polynomials by a scalar). Pay attention to polynomials of different degrees.
+
+15. Write a class `TimeDelta` with an attribute `seconds`. Implement `__add__`, `__sub__`, `__mul__` (multiplication by a scalar) and `__truediv__`. The `/` operator should distinguish division by a number (returns a `TimeDelta`) from division by another `TimeDelta` (returns a `float` — the ratio of the durations).
+
+16. Write a class `Vector3D` with attributes `x`, `y`, `z`. Implement `__add__`, `__sub__`, `__mul__` (the dot product with another vector returning a `float`, or scaling the vector by a number), `__rmul__` and `__neg__` (the unary `-` operator). Use type hinting and `isinstance` to distinguish between operand types.
+
+17. Write a class `Currency` with attributes `amount` and `code` (e.g. "PLN", "USD"). Implement `__add__`, `__sub__`, `__mul__` (by a scalar) and `__truediv__` (by a scalar). Addition and subtraction between different currencies should be forbidden (raise a `TypeError`). Add the `__radd__` and `__rmul__` methods for commutativity with scalars.
+
+18. Write a class `FractionNumber` with attributes `numerator` and `denominator`. Implement `__add__`, `__sub__`, `__mul__` and `__truediv__` with full fraction arithmetic (including bringing fractions to a common denominator). Each operation should return the fraction in reduced form — use `math.gcd` to simplify the result.
+
+19. Write a class `SparseVector` that stores a sparse vector as a dictionary (the keys are the indices of the non-zero elements). Implement `__add__`, `__sub__` and `__mul__` (the dot product with another `SparseVector` returning a `float`, or scaling by a number). Make sure the keys are merged correctly and zeros are removed from the resulting dictionary.
+
+20. Write a family of classes representing physical units: `Distance` (meters), `Time` (seconds) and `Speed` (meters per second). Implement the arithmetic operators so that `Distance / Time` returns `Speed` and `Speed * Time` returns `Distance`. Also handle adding and subtracting objects of the same type and multiplication by a scalar. For invalid operations (e.g. `Distance + Time`), raise a `TypeError`.

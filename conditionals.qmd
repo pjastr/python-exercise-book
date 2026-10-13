@@ -1,0 +1,55 @@
+# Conditional Statements
+
+1. Read an integer from the user and print whether it is positive, negative or equal to zero.
+
+2. Read an integer from the user and print whether it is even or odd (use the `%` operator).
+
+3. Read the user's age and print the message `"Adult"` or `"Minor"`. Then write the same solution in a single line using a conditional expression (`x if condition else y`).
+
+4. Read two numbers from the user and print the larger one without using the `max()` function. If the numbers are equal, print an appropriate message.
+
+5. Read three numbers from the user and print the largest of them, using only `if`, `elif` and `else` statements and comparison operators.
+
+6. Read from the user the number of points (from 0 to 100) scored in a test and print the grade according to the scale:
+   - 0–50 — `2.0`,
+   - 51–60 — `3.0`,
+   - 61–70 — `3.5`,
+   - 71–80 — `4.0`,
+   - 81–90 — `4.5`,
+   - 91–100 — `5.0`.
+
+   If the number of points is out of range, print a message about invalid input.
+
+7. Read a year from the user and check whether it is a leap year. A year is a leap year if it is divisible by 4 and not divisible by 100, or if it is divisible by 400. Write the condition as a single expression using the `and` and `or` operators.
+
+8. Read a temperature from the user and, using a chained comparison (e.g. `15 <= t < 25`), print whether it is `"cold"` (below 15), `"pleasant"` (from 15 to 25) or `"hot"` (above 25).
+
+9. Read a single character from the user and check whether it is a vowel (`a`, `e`, `i`, `o`, `u`), using the `in` operator with the string `"aeiou"`. Handle uppercase letters as well (e.g. with `.lower()`).
+
+10. Read the lengths of three line segments from the user and check whether they can form a triangle (the sum of the lengths of any two sides must be greater than the third). If so, determine whether the triangle is equilateral, isosceles or scalene.
+
+11. Read the coefficients `a`, `b`, `c` of the quadratic equation $ax^2 + bx + c = 0$ from the user. Calculate the discriminant $\Delta$ and print the roots of the equation (two, one, or a message that there are no real roots). Handle the case `a == 0` separately.
+
+12. Read the coordinates `x`, `y` of a point from the user and print which quadrant of the coordinate system the point lies in. Handle the cases where the point lies on an axis or at the origin.
+
+13. Read a login and a password from the user. If the login is `"admin"` and the password is `"python123"`, print `"Logged in"`. Otherwise, print whether the login or the password was incorrect. Use a nested `if` statement.
+
+14. Read a string from the user and print whether it is empty. Use the fact that an empty string has the Boolean value `False` (the condition `if not text:`).
+
+15. Read the number of a day of the week (1–7) from the user and print its name, using a `match`–`case` statement. For values out of range, use the `case _` pattern.
+
+16. Write a simple calculator: read two numbers and an operation symbol (`+`, `-`, `*`, `/`) and print the result. Use a `match`–`case` statement to select the operation. Handle division by zero and an unknown operation symbol with a message to the user.
+
+17. Read the total purchase amount from the user. The shop offers a discount: 5% for amounts above 100 PLN, 10% for amounts above 500 PLN and 15% for amounts above 1000 PLN. In addition, if the customer has a loyalty card (read the answer `y`/`n`), they receive an extra 2% discount. Print the amount to be paid.
+
+18. Read from the user the weight of a parcel in kilograms and whether it is a priority parcel. Calculate the shipping cost according to the following rules:
+    - up to 1 kg — 10 PLN,
+    - above 1 kg up to 5 kg — 15 PLN,
+    - above 5 kg up to 20 kg — 25 PLN,
+    - parcels above 20 kg are not accepted.
+
+    A priority parcel costs 50% more.
+
+19. Read a date from the user as three numbers: day, month, year. Check whether the date is valid (take into account the number of days in each month and leap years).
+
+20. Read a time in 24-hour format from the user (`hour` and `minute` as two integers) and print it in 12-hour format with the suffix `AM` or `PM` (e.g. `0:15` → `12:15 AM`, `13:05` → `1:05 PM`, `12:00` → `12:00 PM`). Validate the input data.

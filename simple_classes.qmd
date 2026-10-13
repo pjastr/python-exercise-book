@@ -1,0 +1,49 @@
+# Simple Classes
+
+For each class, create an object of it outside the class at least once.
+
+1. Write a class `Dog` with an initializer that takes `name` and `age`, and a method `bark()` that prints `"<name>: Woof!"`. Create two objects of this class and call the `bark()` method on each of them. Also print the attributes of both objects.
+
+2. Write a class `Rectangle` with attributes `width` and `height` and methods `area()` and `perimeter()` that return the area and the perimeter of the rectangle, respectively. Add a method `is_square()` that returns a boolean value.
+
+3. Write a class `Counter` with an attribute `value` (initially 0) and methods `increment()`, `decrement()` and `reset()`. Create two counters, perform various operations on them and show that their states are independent.
+
+4. Write a class `Lamp` with an attribute `is_on` (initially `False`) and methods `turn_on()`, `turn_off()` and `toggle()`. Add a method `status()` that returns the string `"on"` or `"off"`.
+
+5. Write a class `BankAccount` with attributes `owner` and `balance` (0 by default) and methods `deposit(amount)` and `withdraw(amount)`. The methods should raise a `ValueError` exception when the amount is not positive or when the account has insufficient funds. Test the class by catching the exceptions in a `try/except` block.
+
+6. Add to the `BankAccount` class from the previous exercise an attribute `history` (a list) that records each operation as a tuple `(operation_type, amount)`, and a method `print_history()` that prints the operation history.
+
+7. Add to the `BankAccount` class a method `transfer(other, amount)` that transfers money to another account by calling the `withdraw()` and `deposit()` methods. Create two accounts and make a transfer. Check what happens to the balances when the transfer fails.
+
+8. Analyze the code below and explain in a comment why changing an attribute of object `b` also changes object `a`. Then create a second, independent object.
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+a = Point(1, 2)
+b = a
+b.x = 100
+print(a.x)
+```
+
+9. Write a class `Point` with attributes `x` and `y` and methods `move(dx, dy)` (moves the point in place) and `distance_to(other)` (returns the distance to another point). Create three points and print the distances between each pair.
+
+10. Write a class `Student` with attributes `name` and `grades` (an empty list created in the initializer) and methods `add_grade(grade)` (which checks whether the grade belongs to the set `{2, 3, 3.5, 4, 4.5, 5}`), `average()` and `has_passed()` (returns `True` if no grade is equal to 2).
+
+11. Create a list of five objects of the `Student` class from the previous exercise, add a few grades to each of them, and then:
+    - print the name and the average of each student,
+    - find the student with the highest average,
+    - create a list of the names of the students who failed the course.
+
+12. Write a class `Car` with a class attribute `wheels = 4` and instance attributes `brand` and `model`. Print the `wheels` attribute through the class and through an object. Then assign `car.wheels = 3` for one object and check the value of the attribute in other objects and in the class. Explain the result in a comment.
+
+13. Write a class `Ticket` with a class attribute `counter` that counts the number of tickets created. Each newly created ticket should receive the next number as the instance attribute `number`. Create several tickets and print their numbers and the total number of tickets.
+
+14. Write a class `ShoppingCart` with methods `add(product, price, quantity=1)`, `remove(product)`, `total()` and `print_receipt()`. Store the products in a dictionary in which the key is the product name and the value is a tuple `(price, quantity)`. Adding an existing product should increase its quantity.
+
+15. Write a class `Stack` that stores elements in a list, with methods `push(item)`, `pop()`, `peek()`, `is_empty()` and `size()`. The `pop()` and `peek()` methods called on an empty stack should raise an `IndexError` exception with a readable message. Use the stack to check whether the brackets in a string (e.g. `"(a[b]{c})"`) are correctly paired.
+
+16. Write a class `Library` that stores books as a dictionary `{title: number_of_copies}`, with methods `add_book(title, copies=1)`, `borrow(title)` and `give_back(title)`. The `borrow` method should raise an exception when the book is not in the library or all copies are borrowed. Add methods `save(path)` and `load(path)` that save and load the state of the library to and from a text file.

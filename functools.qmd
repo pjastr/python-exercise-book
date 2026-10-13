@@ -1,0 +1,41 @@
+# The `functools` Module
+
+1. Using `functools.reduce`, calculate the sum of the elements of the list of integers `values`. Set the initial value of the accumulator to 0.
+
+2. Using `functools.reduce` and the `operator` module, calculate the product of the elements of the list `numbers` containing floating-point numbers. Do not use a lambda expression.
+
+3. Write a function `clip_value` that takes a value, a lower limit and an upper limit and returns the value clipped to the given range. Then, using `functools.partial`, create a function `clip_percent` with the limits set to 0 and 100.
+
+4. Define a function `format_number(value, precision, suffix)` that returns a formatted string. Using `functools.partial`, configure a variant `format_percent` with precision 2 and the suffix `"%"` and a variant `format_currency` with precision 2 and the suffix `" PLN"`.
+
+5. Using the `functools.lru_cache` decorator, recursively implement a function `fibonacci(n)` that returns the n-th term of the Fibonacci sequence. Call the function for the value 100 and print the result.
+
+6. Implement a recursive function `binomial(n, k)` that calculates the binomial coefficient. Use the `functools.cache` decorator, and then, after several calls, print the statistics from `cache_info`.
+
+7. Using the `functools.lru_cache(maxsize=32)` decorator, implement a function `expensive_lookup(key)` that simulates an expensive data fetch by calling `time.sleep(1)` and returning a dictionary. Measure the time of the second call with the same argument and compare it with the first.
+
+8. Explain in a comment why a function decorated with `lru_cache` will not work if we pass it an argument of type `list`. Then write a function `sum_unique(items)` that takes a tuple and returns the sum of its unique values, and demonstrate the use of the cache with different tuples as input.
+
+9. Define a class `Statistics` with a constructor that takes a sequence of numbers. Use `functools.cached_property` to define the attributes `mean`, `variance` and `stdev`. Inside each method, add a `print` call reporting that the computation has started, in order to verify that it is performed only once.
+
+10. Implement a class `TextAnalyzer` with a constructor that takes a string. Using `functools.cached_property`, add the attributes `word_count`, `unique_words` (returning a `set`) and `most_common` (returning the most frequently occurring word).
+
+11. Using `functools.singledispatch`, define a function `describe(value)` that returns the string `"integer: ..."` for an argument of type `int`, the string `"float: ..."` for `float`, and the string `"string of length ..."` for `str`. Add a default implementation that raises `TypeError`.
+
+12. Using `functools.singledispatch`, write a function `serialize(data)` that, for a list, returns its representation as a string with the elements separated by commas; for a dictionary, as `key=value` pairs separated by semicolons; and for a tuple, as the elements in round brackets.
+
+13. Write a decorator `log_calls` that prints the name of the decorated function and the passed arguments before each call. Use `functools.wraps` to preserve the metadata of the original function. Check that `__name__` and `__doc__` of the decorated function are preserved.
+
+14. Implement a decorator `retry(times)` that retries the function call up to `times` times if an exception is raised. Use `functools.wraps`. Test the decorator on a function that randomly either raises an exception or returns a result.
+
+15. Using the `functools.total_ordering` decorator, implement a class `Temperature` that stores a value in degrees Celsius. Define only the `__eq__` and `__lt__` methods, and then check how all the comparison operators and the `sorted` function work on a list of instances.
+
+16. Using `functools.total_ordering`, implement a class `Version` whose instances are compared based on the tuple `(major, minor, patch)`. Demonstrate the use of the `<`, `>=` and `==` operators and the sorting of a list of objects.
+
+17. Using `functools.reduce` and the `operator.and_` function from the `operator` module, calculate the intersection of the list of sets `sets_list`. Then do the same for the union of the sets, using `operator.or_`.
+
+18. Given a list of dictionaries `records`, in which each element contains the keys `category` and `amount`, use `functools.reduce` to build a dictionary aggregating the sums of amounts per category. The accumulator should be an empty dictionary.
+
+19. Write a decorator `memoize_with_stats` that combines memoization with a hit and miss counter (without using `lru_cache`). Use `functools.wraps`. The decorator should add the methods `cache_hits` and `cache_misses` to the function, returning the current counters.
+
+20. Using `functools.partial`, `functools.reduce` and `functools.singledispatch`, design a function `pipeline(value, *steps)` that applies a sequence of transformations to the input value. Then define a `singledispatch` function `apply_default` that provides different transformation steps for the types `int`, `str` and `list`, and use `partial` to configure reusable variants of the pipeline steps.

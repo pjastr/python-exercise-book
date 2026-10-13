@@ -1,0 +1,59 @@
+# File Handling
+
+In these tasks, open files using the `with` statement, and for text files specify the encoding explicitly (`encoding="utf-8"`).
+
+## Text Files
+
+1. Create a file `hello.txt` and write three lines of text to it (mode `"w"`, method `.write()`). Remember the newline characters `"\n"`. Then open the file in mode `"r"`, read its entire contents with the `.read()` method and print them.
+
+2. Open the file `hello.txt` from the previous task in mode `"a"` and append two new lines at its end. Print the contents of the file and check whether the previous lines have been preserved. In a comment, describe the difference between the modes `"w"`, `"a"` and `"x"`.
+
+3. Read the file `hello.txt` line by line by iterating directly over the file object, and print each line preceded by its number. Remove the newline characters with the `.rstrip("\n")` method to avoid empty lines in the output.
+
+4. Compare how the `.read()`, `.readline()` and `.readlines()` methods work on the same file. Check the type of the returned result in each case.
+
+5. Read successive names from the user (until an empty string is entered) and save them in the file `names.txt` — each on a separate line — using the `.writelines()` method.
+
+6. Write a function `file_stats(path)` that returns a tuple with the number of lines, the number of words and the number of characters in a text file (similar to the `wc` command on Unix systems). Test it on a file of your choice.
+
+7. Write a program that tries to open a file whose name is given by the user and prints its contents. If the file does not exist, catch the `FileNotFoundError` exception and print an appropriate message.
+
+8. Create a file `numbers.txt` containing integers on successive lines (some lines may be empty or contain text that is not a number). Write a program that reads the file, skips invalid lines (handling the `ValueError` exception) and prints the sum, minimum, maximum and the number of skipped lines.
+
+9. Write a function `count_words(path)` that returns a dictionary with the number of occurrences of each word in a text file. Convert all letters to lowercase and remove the punctuation characters `.,;:!?`. Print the 10 most frequent words (hint: `sorted(counts, key=counts.get, reverse=True)`).
+
+10. Write a function `copy_uppercase(source, target)` that copies the text file `source` to the file `target`, converting all letters to uppercase. Open both files in a single `with` statement.
+
+11. Given the file `grades.csv` with the following contents:
+```
+name;math;physics;computer_science
+Alice;5;4;5
+Bob;3;4;4
+Charlie;4;5;3
+Diana;5;5;5
+```
+Read the file without using any additional modules (the `.strip()` and `.split(";")` methods), skip the header row and print the average grade for each person. Then save the names and averages (rounded to two decimal places) to the file `averages.csv`.
+
+12. Solve the previous task again, this time using the `csv` module (`csv.reader` with the parameter `delimiter=";"` and `csv.writer`). When opening the file for writing, use the parameter `newline=""`.
+
+13. Write a function `save_contacts(contacts, path)` that saves a dictionary of contacts `{name: phone number}` to a text file in the form `name=number` (each contact on a separate line), and a function `load_contacts(path)` that reads such a file and returns a dictionary. Check that after saving and loading you get a dictionary equal to the original one.
+
+14. Save the same dictionary of contacts to the file `contacts.json` using the `json.dump()` function (with the parameters `ensure_ascii=False` and `indent=2`) and read it back with the `json.load()` function. Open the file in a text editor and compare its contents with the file from the previous task.
+
+15. Write a journal program: each time it is run, it reads one line of text from the user and appends it to the end of the file `journal.txt` together with the number of the entry (determine the number by counting the existing lines of the file; take into account the case where the file does not exist yet).
+
+## Binary Files
+
+16. Create a `bytes` object using `bytes([72, 101, 108, 108, 111])` and print it. Then encode the string `"Zażółć gęślą jaźń"` (a Polish phrase full of diacritics) into bytes with the `.encode("utf-8")` method, and print the number of characters in the string and the number of bytes after encoding. In a comment, explain the difference.
+
+17. Write the string `"Zażółć gęślą jaźń"` to a text file with `utf-8` encoding, then open this file in binary mode `"rb"` and print its contents as a `bytes` object as well as a list of the values of successive bytes (`list(data)`). Also try reading the file in text mode with the `cp1250` encoding (a legacy Central European Windows code page) and describe the result.
+
+18. Write the numbers from 0 to 255 as successive bytes to the binary file `data.bin` (mode `"wb"`). Read the file, check its size (`len()`) and print the bytes at indices 65 to 90. Decode them into a string and explain the result.
+
+19. Write the integers `[1, 300, 70000, -5]` to a binary file, converting each of them into 4 bytes with the `int.to_bytes(4, "little", signed=True)` method. Then read the file 4 bytes at a time (`.read(4)`) and reconstruct the numbers with the `int.from_bytes()` method.
+
+20. Write a function `copy_binary(source, target, chunk_size=4096)` that copies any file (e.g. a JPG image) in binary mode, reading it in chunks of size `chunk_size` in a `while` loop. Check whether the copy is identical to the original by comparing the contents of both files read in binary mode.
+
+21. PNG files start with the 8-byte signature `b"\x89PNG\r\n\x1a\n"`, and JPEG files start with the bytes `b"\xff\xd8\xff"`. Write a function `detect_image_type(path)` that reads the beginning of a file and returns `"PNG"`, `"JPEG"` or `"unknown"`. Test it on several files, including a text file.
+
+22. Open the file `data.bin` from task 18 in mode `"rb"`. Using the `.seek()` method, move to the byte at index 100, read 5 bytes and print them. Then print the current position in the file using the `.tell()` method.

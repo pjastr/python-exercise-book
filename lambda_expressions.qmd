@@ -1,0 +1,41 @@
+# Lambda Expressions
+
+1. Write a lambda expression named `cube` that takes an integer and returns its cube. Call it for the value 4 and print the result.
+
+2. Define a lambda expression `area_rectangle` that takes two arguments (length and width) and returns the area of the rectangle. Check how it works for several pairs of values.
+
+3. Using the `map` function and a lambda expression, transform the list of integers `numbers` into a list of their absolute values. Print the result as a list.
+
+4. Using `filter` and a lambda expression, select from the list `words` only those strings whose length is greater than 5. The result should be a new list.
+
+5. Sort the list of tuples `points` of the form `(x, y)` in ascending order by the second coordinate, using the `sorted` function and the `key` parameter given as a lambda expression.
+
+6. Given a list of dictionaries `students`, in which each element contains the keys `name` and `grade`, sort it in descending order by the value of `grade` using `sorted` and a lambda.
+
+7. Using `functools.reduce` and a lambda expression, calculate the sum of squares of the elements of the list `values` containing floating-point numbers.
+
+8. Using `reduce` and a lambda, find the largest element in the list of integers `numbers` without using the built-in `max` function.
+
+9. Define a lambda expression `classify_temperature` that, for a given temperature (a floating-point number), returns one of the strings `"cold"`, `"warm"` or `"hot"`, depending on the range (below 10, between 10 and 25, above 25). Use a conditional expression.
+
+10. For a list of strings `names`, use a combination of `map` and a lambda to convert each name to a format in which the first letter is uppercase and the rest are lowercase. Then, from the transformed list, filter out the names beginning with the letter `A`.
+
+11. Given two lists of equal length — `prices` and `quantities` — use `zip`, `map` and a lambda to calculate a list of the products of corresponding elements.
+
+12. Using `enumerate` and a lambda expression passed to `map`, create a list of strings of the form `"i: value"` for each position of the list `items`.
+
+13. Write a generator expression `even_squares` that, for successive numbers in the range from 1 to 100, returns the squares of the even numbers. Then print the first five values using `next`.
+
+14. Using the `iter` and `next` functions, manually retrieve the first three elements of the list `letters` containing letters of the alphabet. Explain in a comment the difference between an iterable and an iterator.
+
+15. Define a function `make_multiplier` that takes a number `factor` and returns a lambda expression that multiplies its argument by this number. Demonstrate how it works by creating the functions `double` and `triple`.
+
+16. Given a list of words `text_tokens`, use `sorted` together with a lambda to order them first in ascending order by word length and then alphabetically (use a tuple as the value returned by the key).
+
+17. Using only `map`, `filter` and lambdas, write an expression that calculates the sum of cubes of the odd numbers in the range from 1 to 50. Use the `sum` function for the final summation.
+
+18. Implement a generator function `running_average` that, for a given iterable of numbers, returns successive running averages. Then, using `map` and a lambda, round the results to two decimal places.
+
+19. Given a list of dictionaries `transactions` with the keys `category` and `amount`, use `reduce` and a lambda to calculate a dictionary aggregating the sums of amounts within each category. The accumulator should be an empty dictionary.
+
+20. Write a function `compose` that takes any number of single-argument functions (passed as lambda expressions) and returns their composition as a single lambda expression. Demonstrate how it works by composing three operations: adding 1, squaring and multiplying by 2.

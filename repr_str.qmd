@@ -1,0 +1,41 @@
+# Text Representations of Objects
+
+1. Define a class `Dog` with attributes `name` and `breed`. Implement the `__str__` method so that it returns text in the format `name (breed)`.
+
+2. Define a class `Point` with attributes `x` and `y`. Implement the `__repr__` method so that it returns text that allows the object to be recreated, e.g. `Point(3, 5)`.
+
+3. Define a class `Book` with attributes `title` and `author`. Implement both methods — `__str__` and `__repr__` — so that they return different representations of the same object.
+
+4. Create a class `Temperature` with an attribute `celsius`. The `__str__` method should return the value with its unit, e.g. `36.6°C`, and `__repr__` — the constructor expression `Temperature(36.6)`.
+
+5. Define a class `Color` with attributes `r`, `g`, `b`. Implement `__repr__` so that it satisfies the condition `eval(repr(obj)) == obj` (this also requires defining `__eq__`).
+
+6. Create a class `Student` with attributes `first_name`, `last_name` and `grade`. Implement `__str__` returning a friendly description of the student, and `__repr__` — an unambiguous technical representation.
+
+7. Write a class `Fraction` with attributes `numerator` and `denominator`. The `__str__` method should display the fraction in the format `3/4`, and `__repr__` — in the format `Fraction(3, 4)`.
+
+8. Define a class `Product` with attributes `name` and `price`. Put several objects of this class into a list, and then print the list using `print()`. Observe which method — `__str__` or `__repr__` — is called for the elements of the list.
+
+9. Create a class `Vector2D` with attributes `x` and `y`. Implement `__repr__` and `__str__`, and then check what `f"{obj}"`, `str(obj)` and `repr(obj)` return, as well as what is shown when the object is displayed in the interactive interpreter.
+
+10. Write a class `LogEntry` with attributes `timestamp`, `level` and `message`. The `__str__` method should return a readable log entry, and `__repr__` — a full representation with all attributes, useful for debugging.
+
+11. Define a class `Currency` with attributes `amount` and `code` (e.g. `"PLN"`, `"USD"`). Implement `__str__` formatting the amount with the currency symbol, and `__repr__` — with full decimal precision.
+
+12. Create a class `Matrix` that stores a two-dimensional list of numbers. Implement `__str__` so that it displays the matrix in a readable row-by-row form, and `__repr__` — as a single-line constructor expression.
+
+13. Define a base class `Shape` with a `__repr__` method that automatically reads the class name from `type(self).__name__`. Then create derived classes `Circle` and `Rectangle` that inherit this implementation and add their own attributes.
+
+14. Write a class `LinkedList` with nodes of type `Node`. Implement `__repr__` for the `LinkedList` class so that it displays the entire contents of the list in the format `LinkedList(1 -> 2 -> 3)`.
+
+15. Create a class `Person` with an attribute `secret_code` that should not appear in the output of `__str__` (shown to the user) but should be visible in `__repr__` (intended for the programmer).
+
+16. Define a class `Config` that stores a dictionary of settings. Implement `__repr__`, which displays the sorted keys and their values, and `__str__`, which displays only the number of keys and the names of the first three.
+
+17. Write a class decorator `auto_repr` that automatically generates a `__repr__` method based on the attributes passed to `__init__`. Test it on at least two different classes.
+
+18. Create a class hierarchy `Animal` -> `Mammal` -> `Cat`. At each level, implement `__repr__` that calls `super().__repr__()` and appends the attributes specific to that level. Analyze the resulting representation string.
+
+19. Define a class `LazyRepr` in which the `__repr__` method performs an expensive operation (e.g. simulated with `time.sleep`). Then write an optimized version that caches the result of `__repr__` using the memoization technique and compare the execution times.
+
+20. Write a metaclass `ReprEnforcerMeta` that, when a class is created, checks whether the class defines both `__str__` and `__repr__`. If either of these methods is missing, the metaclass should raise a `TypeError` exception with an appropriate message.

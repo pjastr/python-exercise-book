@@ -1,0 +1,36 @@
+# Dictionaries
+
+
+1. Create a dictionary `student` with the keys `name`, `age` and `grade`. Assign any values to them, then print the value assigned to the key `name`.
+
+2. Given the dictionary `fruits = {"apple": 3, "banana": 5, "cherry": 2}`, add a new key `orange` with the value 7, then print the whole dictionary.
+
+3. Given the dictionary `config = {"host": "localhost", "port": 8080, "debug": True}`, remove the key `debug` using the `pop()` method and print the removed value as well as the remaining dictionary.
+
+4. Given the dictionary `prices = {"milk": 3.50, "bread": 2.00, "eggs": 5.99, "butter": 4.25}`, write a loop that prints only the products whose price is higher than 3.00.
+
+5. Use a dict comprehension to create a dictionary `squares` that maps each number from 1 to 10 to its square (e.g. `{1: 1, 2: 4, 3: 9, ...}`).
+
+6. Given two lists, `keys = ["name", "city", "language"]` and `values = ["Alice", "Warsaw", "Python"]`, create a dictionary `profile` from them using the `zip()` function.
+
+7. Given the dictionary `inventory = {"apples": 10, "bananas": 0, "cherries": 5, "dates": 0}`, use a dict comprehension to create a new dictionary `in_stock` that contains only the products with a quantity greater than 0.
+
+8. Given the dictionary `scores = {"Alice": 85, "Bob": 92, "Charlie": 78, "Diana": 95}`, find the key with the highest value using the `max()` function and its `key` parameter.
+
+9. Write a function `merge_dicts(dict_a, dict_b)` that merges two dictionaries. If both dictionaries contain the same key, the values should be added together. Return a new dictionary.
+
+10. Given the text `text = "apple banana apple cherry banana apple"`, write code that counts the occurrences of each word and stores the result in a dictionary `word_count` without using the `Counter` class.
+
+11. Given the dictionary `data = {"a": 1, "b": 2, "c": 3}`, write code that swaps the keys and values, creating a new dictionary `inverted_data` (e.g. `{1: "a", 2: "b", 3: "c"}`).
+
+12. Create a nested dictionary `school` that stores data about three students. Each student (with the keys `student_1`, `student_2`, `student_3`) is assigned a dictionary with the keys `name`, `age` and `grades` (a list of grades). Print the average grade of the second student.
+
+13. Write a function `group_by_length(words)` that takes a list of strings and returns a dictionary in which the key is the length of a word and the value is a list of words of that length. Use the `setdefault()` method.
+
+14. Given the dictionary `settings = {"resolution": "1080p", "volume": 75, "brightness": 50}`, write a function `update_settings(current, overrides)` that updates the values in `current` only for keys that already exist in it, ignoring any new keys from `overrides`.
+
+15. Given the dictionary `nested = {"a": {"b": {"c": 42}}}`, write a function `deep_get(dictionary, keys_path, default_value=None)` that takes a dictionary and a string of keys separated by dots (e.g. `"a.b.c"`) and returns the nested value, or `default_value` if the path does not exist.
+
+16. Write a function `flatten_dict(nested_dict, parent_key="", separator=".")` that flattens a nested dictionary into a single-level one. For example, `{"a": {"b": 1, "c": {"d": 2}}}` should produce `{"a.b": 1, "a.c.d": 2}`. Use recursion.
+
+17. Write a function `diff_dicts(dict_a, dict_b)` that compares two dictionaries and returns a dictionary with three keys: `added` (keys present only in `dict_b`), `removed` (keys present only in `dict_a`) and `changed` (keys present in both but with different values, stored as a tuple `(old_value, new_value)`).

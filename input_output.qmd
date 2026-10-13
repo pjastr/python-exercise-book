@@ -1,0 +1,57 @@
+# Variables, Types and Input/Output
+
+In the exercises in this chapter, use only sequences of statements — no conditional statements or loops.
+
+1. Write a program that prints three lines: your first name, the name of your degree programme and the name of your university. Precede each line with a comment (`#`) describing what it prints.
+
+2. Using a single call to the `print()` function, print the words `"Python"`, `"is"`, `"great"` so that they are separated by a hyphen (`-`) and the line ends with an exclamation mark instead of a newline character. Use the `sep` and `end` parameters.
+
+3. Create the variables `first_name`, `age`, `height` and `is_student`, assigning to them, respectively: a string, an integer, a floating-point number and a Boolean value. Print each variable together with its type, using the `type()` function.
+
+4. Read the user's first name using `input()` and print a greeting in the form `Hello, <name>!`.
+
+5. Read two integers from the user (remember to convert them with `int()`), then print their sum, difference, product, quotient (`/`), integer quotient (`//`), remainder (`%`) and the result of exponentiation (`**`).
+
+6. Evaluate and print the results of the following expressions:
+```python
+7 / 2
+7 // 2
+-7 // 2
+7 % 3
+-7 % 3
+2 ** 10
+0.1 + 0.2
+```
+In comments, explain any results that surprised you.
+
+7. Read the side length of a square (a floating-point number) from the user and print its area and perimeter. Round the results to two decimal places using the `round()` function.
+
+8. Read a temperature in degrees Celsius from the user and convert it to degrees Fahrenheit using the formula $F = \frac{9}{5}C + 32$. Print the result.
+
+9. Read a number of seconds (an integer) from the user and convert it to hours, minutes and seconds using the `//` and `%` operators. For example, for `3725` the program should print `1 h 2 min 5 s`.
+
+10. Read a three-digit number from the user and print its hundreds, tens and units digits separately, using only the `//` and `%` operators. Then print the sum of these digits.
+
+11. Create the variables `a = 5` and `b = 3`. Perform the following augmented assignment operations in turn: `a += b`, `a *= 2`, `a -= 1`, `a //= 3`, `a **= 2`, printing the value of `a` after each of them.
+
+12. Check what happens when you try to add the string `"10"` to the number `5`. Read the error message and explain its cause in a comment. Then fix the code in two ways: so that the result is `15`, and so that the result is `"105"`.
+
+13. Print the results of the following conversions: `int("42")`, `float("3.14")`, `int(3.99)`, `int(-3.99)`, `str(2026)`, `bool(0)`, `bool(15)`, `bool("")`, `bool("False")`. In comments, describe which values are treated as logically false.
+
+14. You are given the string:
+```python
+text = "  Introduction to Programming  "
+```
+Print: the length of the string (`len()`), the string without leading and trailing whitespace (`.strip()`), the string in uppercase (`.upper()`), the string in lowercase (`.lower()`) and the string in which the word `"Programming"` has been replaced with the word `"Python"` (`.replace()`).
+
+15. You are given the string `word = "informatics"`. Print its first character, its last character (using a negative index) and the number of occurrences of the letter `"a"` (`.count()`). Also check what `word.find("ma")` returns.
+
+16. Read the user's first name and last name (two separate calls to `input()`) and print their initials in the form `J.K.`, using string indexing and the `+` operator.
+
+17. Using the `*` operator for strings, print a line made up of 40 `=` characters, below it the title `REPORT`, and below that another line of 40 `=` characters.
+
+18. Read an amount in PLN (a floating-point number) and the euro exchange rate from the user. Print the amount converted to euros, rounded to two decimal places.
+
+19. Read the coordinates of two points in the plane from the user: `x1`, `y1`, `x2`, `y2`. Calculate and print the distance between the points, using the `** 0.5` operator instead of a square root function.
+
+20. Write a program that calculates the BMI (body mass index). Read the body weight in kilograms and the height in centimetres, convert the height to metres, calculate $BMI = \frac{weight}{height^2}$ and print the result rounded to one decimal place. Make sure the prompts shown when reading the data are clear.

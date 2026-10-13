@@ -1,0 +1,51 @@
+# Program Structure and Modules
+
+1. Import the `math` module and print the values of the constants `math.pi` and `math.e`, as well as the results of the functions `math.sqrt(2)`, `math.floor(3.7)`, `math.ceil(3.2)` and `math.gcd(48, 18)`.
+
+2. Import only the functions `sqrt` and `hypot` from the `math` module (`from math import sqrt, hypot`) and compute the length of the diagonal of a rectangle with sides 3 and 4 in two ways. In a comment, describe the difference between `import math` and `from math import sqrt`.
+
+3. Import the `random` module under a shorter name (`import random as rnd`). Generate and print: a random integer in the range 1–6 (`randint`), a random floating-point number in the interval $[0, 1)$ (`random`), a random element of a list (`choice`) and a list shuffled in place (`shuffle`). Set the generator seed (`seed`) and check that the results become reproducible.
+
+4. Use the `dir()` function to print the names available in the `math` module. Then use the `help()` function to display the documentation of the `math.isclose` function and, based on it, compare the values `0.1 + 0.2` and `0.3`.
+
+5. Using the `random` module, write the number-guessing game from the Loops chapter, in which the secret number is drawn at random each time the program is run.
+
+6. Create a file `geometry.py` containing the functions `circle_area(r)`, `circle_perimeter(r)`, `rectangle_area(a, b)` and the constant `PI = 3.14159`. In the same directory, create a file `main.py` that imports the `geometry` module and uses its functions. Run `main.py`.
+
+7. In the `main.py` file from the previous task, import selected functions from the `geometry` module in three ways: `import geometry`, `import geometry as geo`, `from geometry import circle_area`. In a comment, explain why `from geometry import *` is discouraged.
+
+8. At the end of the `geometry.py` file, add the statement `print("Module geometry loaded")`. Run `main.py` and check when the message appears. Import the module twice and check how many times the message is printed.
+
+9. In the `geometry.py` module, print the value of the `__name__` variable. Check what its value is when you run the file directly and when it is imported from `main.py`. Then move the code that tests the module's functions into an `if __name__ == "__main__":` block so that it is not executed on import.
+
+10. Restructure the program below so that all the code is inside functions and the program is started by a `main()` function called in an `if __name__ == "__main__":` block:
+```python
+numbers = []
+while True:
+    text = input("Enter a number (empty = finish): ")
+    if text == "":
+        break
+    numbers.append(float(text))
+print("Sum:", sum(numbers))
+print("Average:", sum(numbers) / len(numbers))
+```
+Extract separate functions for reading the data and computing the statistics. Make sure to handle an empty list.
+
+11. Write a module `text_tools.py` with the functions `count_words(text)`, `reverse_words(text)` and `is_palindrome(text)` (ignoring letter case and spaces). Add a docstring at the beginning of the module and for each function. In a separate file, import the module and call `help(text_tools)`.
+
+12. Create a package `shapes` — a directory with an `__init__.py` file and the modules `circle.py` and `square.py`, each of which contains the functions `area()` and `perimeter()`. In a `main.py` file (outside the package directory), import the modules in two ways: `from shapes import circle` and `import shapes.square`.
+
+13. In the `shapes/__init__.py` file from the previous task, import the `circle` and `square` modules (a relative import: `from . import circle, square`), so that in `main.py` it is enough to write `import shapes` and use `shapes.circle.area(...)`.
+
+14. Import the `sys` module and print the `sys.path` list. In a comment, explain in what order Python searches for imported modules and what happens when you create your own file named `random.py` in the project directory.
+
+15. Write a program `sum_args.py` that sums the numbers passed as command-line arguments (`sys.argv`). Run it with the command `python sum_args.py 3 4 5.5`. Handle the case of no arguments and of arguments that are not numbers.
+
+16. Split the program from the Functions chapter (the to-do list) into modules:
+    - `storage.py` — functions for saving the task list to and loading it from a text file,
+    - `tasks.py` — functions for adding, removing and displaying tasks,
+    - `main.py` — the program menu and the `main()` function.
+
+    Make sure that the `storage.py` and `tasks.py` modules do not use the `input()` or `print()` functions (except for the function that displays the tasks) — all communication with the user should take place in `main.py`.
+
+17. Create a module `config.py` containing configuration constants (e.g. `FILE_NAME`, `MAX_TASKS`) written in uppercase letters, and use them in the program from the previous task instead of values hard-coded directly in the code.

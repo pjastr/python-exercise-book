@@ -1,0 +1,41 @@
+# Regular Expressions
+
+1. Import the `re` module and use `re.findall()` to find all floating-point numbers in the text `"Price: 49.99 PLN, discount: 10.50 PLN"`, using the pattern `r"\d+\.\d+"`.
+
+2. Explain the difference between writing the pattern as `"\\d+\\.\\d+"` and as `r"\d+\.\d+"`. Which one is more readable and why?
+
+3. Given the string `text = "Report_2024 report_2025 REPORT_2026"`, use `re.findall()` with a pattern containing `\d{4}` to extract all four-digit numbers from it.
+
+4. Given the string `log = "ERROR: file not found at /data/input.csv"`, write a pattern with `r"\b...\b"` that searches it for exactly the word `file` as a whole word (not as part of another word).
+
+5. Given the list `files = ["data.csv", "report.pdf", "sales.xlsx", "model.pkl"]`, write an expression with `re.search()` and a pattern using the alternation `(csv|xlsx)` and the anchor `$` that filters out only the files with the csv or xlsx extension.
+
+6. Given the string `record = "  John Smith  (b. 1990) "` (`b.` is the abbreviation for "born"), use `re.sub()` with an appropriate pattern in an r-string to remove the parenthesized fragment containing the year of birth.
+
+7. Given the string `messy = "Anna   BROWN   (b.  1985)"`, apply `re.sub(r"\s+", " ", messy)` to replace multiple whitespace characters with a single space. Describe what the `+` quantifier does here.
+
+8. Write a regular expression in an r-string that matches an optional dot after the abbreviation `b` (for "born") — use the `?` quantifier in the pattern `r"\bb\.?"`.
+
+9. Define the variable `column = "price"` and use an rf-string to create the pattern `rf"\b{column}\b"`. Then use `re.findall()` on the text `"The total_price and price are different"` and explain why the result contains only `"price"`.
+
+10. Given the list of extensions `extensions = ["csv", "xlsx", "parquet"]`, dynamically build a regex pattern using an rf-string and the `join()` method so that the resulting pattern is `r"\.(csv|xlsx|parquet)$"`.
+
+11. Given the string `data = "Height: 180cm, weight: 75kg, age: 30yrs"`, write a pattern with `re.findall()` that extracts all numbers (sequences of digits), using `r"\d+"`.
+
+12. Given the list of records `raw_data = ["John Smith (b. 1990)", "Anna Brown (b. 1985)"]`, write a `for` loop in which you use `re.sub()` to remove the fragment with the year of birth and then remove redundant spaces — as in the lecture example.
+
+13. Write a pattern in an r-string that matches any sequence of whitespace characters (`\s+`) surrounded by word boundaries (`\b`). Test it on the string `"Hello   World"` using `re.sub()`, replacing multiple spaces with a hyphen.
+
+14. Given the string `line = "error: timeout at 12:45:30"`, use `re.search()` with the pattern `r"\d{2}:\d{2}:\d{2}"` to find the timestamp in it. Explain the role of the `{2}` quantifier in the pattern.
+
+15. Given the list of files `all_files = ["notes.txt", "data.csv", "image.png", "report.xlsx", "archive.parquet"]`, write a list comprehension with `re.search()` and a dynamically built rf-pattern (based on a list of extensions) that returns only the data files.
+
+16. Given the text `info = "PETER   Wilson(b.2000)"`, apply two `re.sub()` operations to it in turn: the first to remove the fragment with the year of birth (note the absence of a space before the parenthesis), the second to normalize the spaces. Finally, call `.strip().title()`.
+
+17. Write a pattern in an r-string that matches e-mail addresses in a simplified form: a sequence of alphanumeric characters, the `@` sign, a sequence of alphanumeric characters, a dot and a domain. Use `\w+`, a literal dot `\.` and `re.findall()`.
+
+18. Define a list of banned words `banned = ["error", "fail", "crash"]`. Using an rf-string and the `join()` method, create a pattern with alternation and word boundaries `\b`, then use `re.findall()` to search for these words in a sample log.
+
+19. Given a multiline string with data in the format `"key: value"`, write a pattern with `re.findall()` using a group `()` and `\s+` that extracts only the values (after the colon and space). Use an r-string.
+
+20. Write a function `clean_records(records)` that takes a list of strings in the format `"FIRSTNAME LASTNAME (b. YYYY)"`. Using `re.sub()` with an r-string, the function should remove the year of birth in parentheses, normalize the spaces (`\s+`), trim the string (`.strip()`) and apply `.title()`. Return the list of cleaned records. Use an rf-string so that the pattern handles an optional space and an optional dot after `b`.

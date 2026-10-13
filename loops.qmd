@@ -1,0 +1,61 @@
+# Loops
+
+In the exercises in this chapter, do not use lists — variables, strings and the `range()` function are enough.
+
+1. Using a `for` loop and the `range()` function, print the numbers from 1 to 10, each on a separate line. Then print them on a single line, separated by spaces (the `end` parameter of the `print()` function).
+
+2. Using a `for` loop, print:
+   - all even numbers from 0 to 30,
+   - the numbers from 20 to 0 in descending order,
+   - every fifth number in the range from 5 to 100.
+
+   In each case, use appropriate arguments of the `range()` function instead of a conditional statement.
+
+3. Read a natural number `n` from the user and calculate the sum of the numbers from 1 to `n` using a loop. Compare the result with the formula $\frac{n(n+1)}{2}$.
+
+4. Read a natural number `n` from the user and calculate its factorial $n!$ using a `for` loop.
+
+5. Read an integer from the user and print its multiplication table from 1 to 10 in the form `7 x 3 = 21`.
+
+6. Using nested loops, print a 10×10 multiplication table in the form of a table. To align the columns, you can use the string method `.rjust()` or the tab character `"\t"`.
+
+7. Read a string from the user and, using a `for` loop that iterates over the characters of the string, count how many vowels and how many digits it contains.
+
+8. Read a string from the user and build (in a loop, character by character) a new string in reverse order. Do not use slicing.
+
+9. Read a natural number from the user and, using a `while` loop and the `//` and `%` operators, calculate the sum of its digits and the number of digits.
+
+10. Write a program that reads numbers from the user until `0` is entered. At the end, print the sum, the number of values read (excluding the zero) and their arithmetic mean. Handle the case where the first number entered is `0`.
+
+11. Keep reading a number in the range from 1 to 10 from the user until they enter a valid value (input validation in a `while` loop). Print a message after each invalid attempt.
+
+12. Print all the numbers from 1 to 100, but instead of numbers divisible by 3 print `Fizz`, instead of numbers divisible by 5 print `Buzz`, and instead of numbers divisible by both 3 and 5 print `FizzBuzz`.
+
+13. Read a natural number `n` from the user and check whether it is a prime number. Exit the loop with a `break` statement once the first divisor has been found. Use the `else` clause of the `for` loop to print a message that the number is prime.
+
+14. Print all prime numbers less than 100, using nested loops.
+
+15. Using a `for` loop and the `continue` statement, print the numbers from 1 to 50, skipping numbers divisible by 7 and numbers containing the digit 7 (check `"7" in str(i)`).
+
+16. Read a natural number `n` from the user and print the first `n` terms of the Fibonacci sequence, using only two helper variables and multiple assignment (`a, b = b, a + b`).
+
+17. Read two natural numbers from the user and calculate their greatest common divisor using the Euclidean algorithm (the version with the remainder of division), using a `while` loop. Based on this, also calculate their least common multiple.
+
+18. Read a natural number `n` from the user and print (using loops and the `*` operator for strings) the following shapes of height `n`:
+    - a right triangle made of asterisks, aligned to the left,
+    - the same triangle aligned to the right,
+    - a Christmas tree (an isosceles triangle).
+
+    Example of a Christmas tree for `n = 3`:
+
+    ```
+      *
+     ***
+    *****
+    ```
+
+19. Read a natural number from the user and print the successive terms of the Collatz sequence until the sequence reaches the value 1 (if the number is even, divide it by 2; otherwise multiply it by 3 and add 1). At the end, print the number of steps performed and the largest value that appeared in the sequence.
+
+20. Write a number guessing game. Set a secret number in the range 1–100 in the code (e.g. `secret = 37`). The user has at most 7 attempts; after each attempt the program prints `"too low"` or `"too high"`. Once the number has been guessed, print the number of attempts used and exit the loop with a `break` statement. If all attempts are used up, print the secret number (use the `else` clause of the loop).
+
+21. Write a program with a text menu running in a `while True` loop. The program stores an account balance (initially 0 PLN) and lets the user choose an option: `1` — deposit, `2` — withdrawal, `3` — display balance, `0` — exit. Do not allow a withdrawal greater than the balance. Exit the loop with a `break` statement.

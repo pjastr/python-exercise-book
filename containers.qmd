@@ -1,0 +1,41 @@
+# Container Emulation
+
+1. Define a class `MyList` that wraps a regular list. Implement the `__len__` method, which returns the number of elements, and test how the built-in `len()` function works on an object of this class.
+
+2. Create a class `Sentence` that stores text as a string. Implement `__len__` so that it returns the number of words in the sentence rather than the number of characters.
+
+3. Define a class `ColorPalette` that stores a list of colors. Implement `__getitem__` so that colors can be retrieved by index, e.g. `palette[2]`.
+
+4. Extend the `ColorPalette` class with a `__setitem__` method that allows replacing the color at a given index, e.g. `palette[0] = "red"`.
+
+5. Write a class `Matrix` that stores data in a flat list. Implement `__getitem__` taking a tuple `(row, col)`, so that element access looks like `matrix[2, 3]`.
+
+6. Create a class `DefaultDict` that emulates a dictionary with a default value. Implement `__getitem__` so that for a non-existent key it returns the value given at initialization instead of raising a `KeyError`.
+
+7. Define a class `Scoreboard` that stores player scores in a dictionary. Implement `__getitem__`, `__setitem__` and `__len__`, and then test the operations `board["Alice"]`, `board["Bob"] = 10` and `len(board)` on it.
+
+8. Write a class `ImmutableList` that implements `__getitem__` and `__len__` but deliberately does not define `__setitem__`. Check which exception is raised when you try to assign a value to an element.
+
+9. Create a class `RangeMap` in which `__getitem__` takes an integer and returns the name of the range that the number belongs to (e.g. `0-10` is `"low"`, `11-20` is `"medium"`). The ranges are defined at initialization.
+
+10. Define a class `CircularBuffer` with a fixed size. Implement `__getitem__`, `__setitem__` and `__len__` so that indices beyond the size of the buffer automatically wrap around cyclically.
+
+11. Write a class `SparseVector` that stores only the non-zero elements in a dictionary. Implement `__getitem__` (returning `0` for missing indices), `__setitem__` (removing the key when the value is set to `0`) and `__len__` (returning the logical size of the vector).
+
+12. Create a class `History` that emulates a container with the ability to undo changes. The `__setitem__` method should push the previous value of the key onto a stack, and an additional method `undo(key)` should restore the last value.
+
+13. Define a class `SliceableString` that implements `__getitem__` with full support for slices. The expression `obj[1:5]` should return a new `SliceableString` object, and `obj[0]` — a single character.
+
+14. Write a class `Table` with data in the form of a list of dictionaries. Implement `__getitem__` so that it supports three access modes — by row index (int), by column name (string) and by a tuple `(row_index, column_name)`.
+
+15. Create a class `ValidatedList` in which `__setitem__` checks the type of the inserted value and raises a `TypeError` if it does not match the type given at initialization (e.g. `ValidatedList(int)`).
+
+16. Define a class `NestedDict` that allows access to nested data using a key in the form of a dotted path, e.g. `config["database.host"]` instead of `config["database"]["host"]`. Implement both `__getitem__` and `__setitem__`.
+
+17. Write a class `TimeSeries` that stores `(datetime, value)` pairs. Implement `__getitem__` so that it accepts both a numeric index and a `datetime` object (looking up the nearest point in time), as well as a slice with `datetime` objects as the bounds of the range.
+
+18. Create a class `ChainMap` that takes several dictionaries in its constructor. Implement `__getitem__` searching the dictionaries in order, `__setitem__` always writing to the first dictionary, and `__len__` returning the number of unique keys across all dictionaries.
+
+19. Define a class `DatabaseTable` that emulates a database table. Implement `__getitem__` supporting queries in the style of `table[lambda row: row["age"] > 18]`, returning a new `DatabaseTable` object with the filtered rows. Add `__len__` and `__setitem__` for updating the rows that satisfy a condition.
+
+20. Write a class `TensorView` that wraps a one-dimensional list of data and interprets it as a tensor of a given shape (e.g. `(2, 3, 4)`). Implement `__getitem__` with support for multidimensional indexing and slicing along each dimension, `__setitem__` with analogous logic, and `__len__` returning the size of the first dimension. Make sure that the view shares data with the original.

@@ -1,0 +1,79 @@
+# Exception Handling
+
+1. Run the following statements one at a time (each separately) and write the name of the raised exception in a comment:
+```python
+10 / 0
+int("abc")
+[1, 2, 3][5]
+{"a": 1}["b"]
+"5" + 5
+undefined_variable
+```
+
+2. Read an integer from the user. If the user enters a value that cannot be converted, catch the `ValueError` exception and print a clear message instead of the interpreter's error message.
+
+3. Read two numbers from the user and print the result of dividing them. Handle the `ValueError` (invalid input) and `ZeroDivisionError` (division by zero) exceptions in separate `except` blocks, printing a different message for each.
+
+4. Modify the program from the previous task so that the result of the division is printed in the `else` block, and the message `"End of calculations"` is printed in the `finally` block. Check when the `else` block is executed and when the `finally` block is executed.
+
+5. Catch an exception using the construct `except ValueError as error:` and print the message text (`error`) and the exception type (`type(error).__name__`).
+
+6. Write a function `read_int(prompt)` that keeps reading input from the user in a loop until they enter a valid integer, and returns that number. Use it to read the user's age.
+
+7. Write a function `read_int_in_range(prompt, low, high)` that works like the function from the previous task, but additionally requires the number to be within the range `[low, high]`. Test it by reading a grade in the range from 2 to 5.
+
+8. Given the list:
+```python
+data = ["12", "7", "abc", "3.5", "", "40", "-8"]
+```
+Using a loop and a `try/except` block, create a list `numbers` containing only the elements that can be converted to `int`, and a list `errors` containing the remaining elements.
+
+9. Given the dictionary:
+```python
+stock = {"apple": 10, "banana": 0, "cherry": 25}
+```
+Write a function `get_stock(product)` that returns the number of items of a product and, if the key does not exist, catches `KeyError` and returns `0`. Then write a second version of the function without exception handling, using the `.get()` method. In a comment, compare both approaches.
+
+10. Write a function `safe_get(items, index, default=None)` that returns the list element at the given index and, in the case of an `IndexError` exception, returns the default value.
+
+11. Write a function `calculate_average(numbers)` that raises a `ValueError` exception with the message `"The list cannot be empty"` (the `raise` statement) when an empty list is passed, and a `TypeError` when any element is not a number (use `isinstance(x, (int, float))`). Test the function in a `try/except` block.
+
+12. Write a function `set_age(age)` that raises a `ValueError` if the age is negative or greater than 150, and otherwise returns it. Test it in a loop for the list of values `[25, -3, 200, 47]`, printing either the result or the error message for each value.
+
+13. Handle several exceptions in a single block: `except (ValueError, ZeroDivisionError) as error:`. Write a program that reads two numbers and prints the result of dividing them, and in the case of either of these two errors prints one common message containing the exception text.
+
+14. Explain in a comment why the construct `except:` (without an exception name) or `except Exception:` covering a large portion of code is considered bad practice. Show an example in which such a block hides a programmer's mistake (e.g. a typo in a variable name).
+
+15. Write a function `parse_point(text)` that takes a string of the form `"x,y"` (e.g. `"3,4"`) and returns a tuple of two floating-point numbers. If the string has an invalid format, the function should catch the exception and then raise a new `ValueError` with a clear message, chaining it to the original exception using `raise ... from error`.
+
+16. Given the function:
+```python
+def withdraw(balance, amount):
+    if amount <= 0:
+        raise ValueError("Amount must be positive")
+    if amount > balance:
+        raise ValueError("Insufficient funds")
+    return balance - amount
+```
+Write a program that, in a loop, reads withdrawal amounts for an initial balance of 1000 PLN and calls the `withdraw` function. The program handles errors both during data conversion and those raised by the function, and terminates when `q` is entered.
+
+17. Write a function `divide(a, b)` in which you first use an `assert` statement with an error message to check that `b != 0`. Call it with invalid data and check which exception is raised. In a comment, explain why `assert` should not replace validation of user input.
+
+18. Analyze the code below and predict the order of the printed messages for the calls `test(1)`, `test(0)` and `test("a")`. Check your answer by running the code.
+```python
+def test(x):
+    try:
+        print("try")
+        result = 10 / x
+    except ZeroDivisionError:
+        print("except ZeroDivisionError")
+        return "error"
+    else:
+        print("else")
+        return result
+    finally:
+        print("finally")
+```
+What happens to the `TypeError` exception in the call `test("a")`?
+
+19. Write a calculator for expressions of the form `number operator number` (e.g. `12 * 4`), read from the user in a loop until `end` is entered. Use the `.split()` method. Handle the following exceptions: a wrong number of elements in the expression, invalid numbers, division by zero and an unknown operator — each with an appropriate message. The program must not terminate with an error regardless of the data entered.

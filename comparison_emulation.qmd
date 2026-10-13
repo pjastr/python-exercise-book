@@ -1,0 +1,41 @@
+# Comparison Emulation
+
+1. Write a class Temperature with a degrees attribute. Implement the `__eq__` method, which compares two objects of this class based on the value of degrees. Test the `==` operator on two instances.
+
+2. In a class Product with attributes name and price, implement the `__lt__` method so that the `<` operator compares products by price. Create three objects and check the result of the comparison.
+
+3. Extend the Product class from the previous task with the `__le__` method. Make sure the method correctly handles the case where the prices are equal.
+
+4. Write a class Student with attributes name and grade. Implement the `__eq__` and `__lt__` methods, then sort a list of students using the built-in `sorted()` function.
+
+5. In a class DataPoint with attributes label and value, implement the `__eq__` method so that it returns `NotImplemented` when other is not an instance of DataPoint. Explain in a comment why we return `NotImplemented` instead of `False`.
+
+6. Write a class Rectangle with attributes width and height. Implement the `__eq__`, `__lt__` and `__gt__` methods so that comparisons are based on the area of the rectangle.
+
+7. Use the `@functools.total_ordering` decorator in a class Score with a points attribute. Define only `__eq__` and `__lt__`, then test all six comparison operators (`==`, `!=`, `<`, `<=`, `>`, `>=`).
+
+8. Write a class SemanticVersion with attributes major, minor and patch. Implement the `__eq__` and `__lt__` methods so that they compare versions lexicographically (first major, then minor, then patch). Sort a list of versions.
+
+9. In a class Interval with attributes start and end, implement the `__eq__` method comparing both endpoints of the interval and `__lt__` comparing intervals by their length. Check that two intervals with different endpoints but the same length are not equal.
+
+10. Write a class Employee with attributes name, department and salary. Implement `__eq__` comparing by name and department (without salary) and `__lt__` comparing by salary only. In a comment, consider the consequences of such an inconsistent definition of equality and ordering.
+
+11. Write a class Vector2D with attributes x and y. Implement `__eq__` comparing both components. Then define `__lt__` comparing vectors by their Euclidean length. Add type hints to all methods.
+
+12. In a class Exam with attributes subject and score, implement `__eq__` and `__lt__`. Then create a list of Exam objects and find its maximum element using the built-in `max()` function — without passing the key parameter.
+
+13. Write a class TemperatureReading with a celsius attribute. Implement the `__eq__` and `__lt__` methods, which compare temperatures with a given tolerance epsilon (e.g. 0.01). Two temperatures that differ by less than epsilon should be considered equal.
+
+14. Create a class Money with attributes amount and currency. Implement `__eq__` and `__lt__` so that they raise a ValueError exception when we try to compare amounts in different currencies. Test both scenarios — matching and mismatching currencies.
+
+15. Write a class Card with attributes rank and suit, representing a playing card. Define a dictionary with the order of ranks (e.g. "2" to "A") and implement `__eq__` and `__lt__` taking this order into account. Use `@total_ordering`. Sort a deck of five cards.
+
+16. In a class TimeSeries storing a list of values, implement `__eq__`, which compares series element by element, and `__lt__`, which compares series by their arithmetic mean. Handle the case of series of different lengths in `__eq__` (they should be unequal).
+
+17. Write a class Matrix2x2 storing a 2x2 matrix as a list of lists. Implement `__eq__` comparing element by element. Define `__lt__` comparing matrices by their determinants. Add a `__repr__` method that displays the matrix in a readable way.
+
+18. Create a class hierarchy: a base class Shape and derived classes Circle and Square. In the Shape class, define the abstract method area(). Implement `__eq__` and `__lt__` in the Shape class, comparing by area(). Check that comparing a Circle with a Square works correctly thanks to inheritance.
+
+19. Write a class CacheEntry with attributes key, value and priority. Implement `__eq__` comparing by key and `__lt__` comparing by priority. Then use the heapq module to build a priority queue based on CacheEntry objects — heapq requires a correctly defined `<` operator.
+
+20. Write a (simplified) class DataFrame storing a dictionary of columns (name -> list of values). Implement `__eq__` checking the equality of structure and data column by column. Define `__lt__` comparing frames by the number of rows. Additionally, implement `__hash__` so that DataFrame objects are unhashable (as in pandas) — assign `__hash__ = None` — and explain in a comment why changing `__eq__` requires careful consideration of `__hash__`.

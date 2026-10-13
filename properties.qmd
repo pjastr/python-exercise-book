@@ -1,0 +1,43 @@
+# Properties
+
+Outside the class, create at least one object and test the properties.
+
+1. Create a class `Circle` with a private attribute `__radius`. Add a property `radius` that returns the value of the radius, and a setter that sets the radius only if the given value is a positive number.
+
+2. Create a class `Person` with a private attribute `__name`. Add a property `name` with a getter that returns the name and a setter that accepts only values of type `str`.
+
+3. Create a class `Temperature` with a private attribute `__celsius`. Add a property `celsius` with a getter and a setter, and a read-only property `fahrenheit` that returns the temperature converted to degrees Fahrenheit.
+
+4. Create a class `Product` with private attributes `__name` and `__price`. Add properties for both attributes. The setter for `price` should accept only values of type `int` or `float` that are greater than or equal to zero.
+
+5. Create a class `Rectangle` with private attributes `__width` and `__height`. Add properties with validation (positive values) and a read-only property `area` that returns the area of the rectangle.
+
+6. Create a class `Student` with a private attribute `__grades`, which is a list. Add a property `grades` whose getter returns a copy of the list and whose setter accepts only lists containing exclusively integers in the range 1–6.
+
+7. Create a class `Email` with a private attribute `__address`. Add a property `address` whose setter validates that the given string contains exactly one `@` character and at least one dot after it.
+
+8. Create a class `BankAccount` with private attributes `__owner` and `__balance`. Add a read-only property `balance` and a property `owner` whose setter accepts only non-empty strings at least 2 characters long.
+
+9. Create a class `Playlist` with a private attribute `__songs` (a list of strings). Add a property `songs` whose getter returns a copy of the list and whose setter accepts only lists in which every element is of type `str` and is not empty.
+
+10. Create a class `Config` with a private attribute `__settings`, which is a dictionary. Add a property `settings` whose getter returns a copy of the dictionary and whose setter accepts only dictionaries in which both the keys and the values are of type `str`.
+
+11. Create a class `Password` with a private attribute `__value`. Add a property `value` whose getter returns a masked form of the password (e.g. `"****"`) and whose setter accepts only strings at least 8 characters long that contain at least one digit and one uppercase letter.
+
+12. Create a class `DateRange` with private attributes `__start` and `__end` (`datetime.date` objects). Add properties for both attributes, where the `end` setter should check that the end date is not earlier than the start date, and the `start` setter — that it is not later than the end date.
+
+13. Create a class `Inventory` with a private attribute `__items`, which is a dictionary mapping product names (str) to quantities (int). Add a property `items` whose getter returns a copy of the dictionary and whose setter validates that all keys are non-empty strings and that the values are non-negative integers.
+
+14. Create a class `RGBColor` with private attributes `__red`, `__green`, `__blue`. Add a property for each channel with a setter that accepts only integers in the range 0–255, and a read-only property `hex` that returns the color in hexadecimal format (e.g. `"#ff00ab"`).
+
+15. Create a class `Matrix` with a private attribute `__data`, which is a list of lists (a 2D matrix). Add a property `data` whose setter checks whether the given value is a non-empty list of lists, whether all rows have the same length and whether all elements are numbers (int or float).
+
+16. Create a class `UserProfile` with private attributes `__username`, `__age` and `__tags` (a list of strings). Add properties for each attribute: `username` accepts only alphanumeric strings 3–20 characters long, `age` accepts integers in the range 0–150, and `tags` accepts lists of unique, non-empty strings with a maximum list length of 10.
+
+17. Create a class `WeightedGrades` with a private attribute `__grades`, which is a dictionary mapping subject names (str) to tuples `(grade, weight)`, where the grade is a float in the range 2.0–5.0 and the weight is a float in the range 0.0–1.0. Add a property `grades` with appropriate validation and a read-only property `weighted_average` that returns the weighted average.
+
+18. Create a class `IPAddress` with a private attribute `__address`. Add a property `address` whose setter validates that the given string is a valid IPv4 address — that is, it consists of exactly four groups of integers in the range 0–255, separated by dots. Add a read-only property `is_private` that returns `True` if the address belongs to a private range (e.g. 192.168.x.x, 10.x.x.x).
+
+19. Create a class `Schedule` with a private attribute `__entries`, which is a dictionary where the key is a day of the week (a str from: "Monday"–"Sunday") and the value is a list of tuples `(start_hour, end_hour)` representing time blocks (int, range 0–23). The setter should validate the correctness of the keys, the tuple format, the hour ranges and that the time blocks within a single day do not overlap. Add a read-only property `total_hours`.
+
+20. Create a class `Document` with private attributes `__title` (str, 1–200 characters), `__authors` (a list of non-empty strings, at least 1 author), `__metadata` (a str→str dictionary) and `__version` (a str in semantic format, e.g. "1.2.3"). Add properties with full validation for each attribute. The `version` setter should additionally check whether the new version is higher than the current one. Add a read-only property `summary` that returns a formatted string containing the title, the authors and the version.

@@ -1,0 +1,41 @@
+# Iterators and Generators
+
+1. Write a class `CountdownIterator` that takes an integer `start` and, when iterated over, returns successive numbers from `start` down to 0 inclusive. Use the iterator protocol (`__iter__`, `__next__`).
+
+2. Create a generator expression `cubes` that produces the cubes of successive numbers for `range(20)`. Then use `sum()` to calculate their sum.
+
+3. Implement a class `RangeIterator` with parameters `start`, `stop` and `step` that works analogously to the built-in `range`, but fully uses the iterator protocol.
+
+4. Write a generator function `even_numbers(limit)` that returns successive even numbers less than `limit`. Use it in a `for` loop to print the values.
+
+5. Using a list comprehension, transform the list `raw_data = ["12", "abc", "7.5", "", "3", "xyz"]` into a list of integers containing only the valid integer values.
+
+6. Write a class `FibonacciIterator` that returns the next number of the Fibonacci sequence on each call of `__next__()`. The iterator should stop after generating `n` elements (`StopIteration`).
+
+7. Create a generator function `chunked(data, chunk_size)` that works similarly to the `DataBatchIterator` class from the lecture, but uses the `yield` statement instead of a class.
+
+8. Write a dictionary comprehension `word_lengths` that, for the list `words = ["python", "data", "iterator", "yield", "set"]`, returns a mapping word → its length, but only for words longer than 3 characters.
+
+9. Implement a generator `running_average(numbers)` that, for a list of numbers, returns successive values of the running average (after the first, second, third... element).
+
+10. Write a class `ReverseIterator` that takes a sequence and, when iterated over, returns its elements in reverse order. Do not use the `reversed()` function.
+
+11. Create a generator pipeline for the list of strings `lines = ["10", "abc", "20", "", "30"]`: the first generator filters the values that are numbers, the second converts them to `int`, the third squares them. Calculate the final sum using `sum()`.
+
+12. Write a generator function `cycle_n_times(iterable, n)` that iterates over the given iterable `n` times, returning successive elements.
+
+13. Using a generator expression and the `any()` function, check whether the list `numbers = [3, 7, 11, 14, 19, 25]` contains any number divisible by 5. Then use `all()` to check whether all of them are less than 30.
+
+14. Implement a class `BatchIterator` with type hinting (use `Iterator`, `List`, `Any` from the `typing` module) that returns data in batches of a given size, but additionally skips batches containing fewer than `min_size` elements.
+
+15. Create a set comprehension `unique_first_letters` containing the first letters (lowercase) of the words from the list `words = ["Apple", "banana", "apricot", "Cherry", "blueberry"]`, but only for words at least 5 characters long.
+
+16. Write a generator function `read_lines_filtered(filepath, keyword)` that reads a file line by line and returns only those lines that contain the given keyword (after `strip()`). Use the `with open(...)` statement.
+
+17. Implement a class `ZipIterator` that takes two sequences and, when iterated over, returns tuples of pairs of corresponding elements. Iteration ends when the shorter of the sequences is exhausted. Do not use the built-in `zip()`.
+
+18. Write a generator pipeline for processing a CSV file (analogous to the lecture example): `load_records` reads the rows, `filter_valid` rejects records with a missing value in column 1, `extract_feature` returns numeric values from a selected column. Then write a function `compute_stats(pipeline)` that returns a dictionary with the keys `min`, `max`, `mean`. Use type hinting (`Generator`, `List`, `Dict`).
+
+19. Using a nested list comprehension, generate a 5×5 multiplication table as a list of lists. Then use a generator expression to calculate the sum of all elements on the diagonal.
+
+20. Implement a class `MovingWindowIterator` with type hinting that takes a sequence `data: List[Any]` and `window_size: int`. When iterated over, it returns successive sublists (windows) of the given size, shifted by one element. Once all possible windows are exhausted, it raises `StopIteration`. Additionally, write a generator expression that uses this class to calculate the mean in each window for a list of numbers.
